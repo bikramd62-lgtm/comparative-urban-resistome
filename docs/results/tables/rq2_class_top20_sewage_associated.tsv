@@ -1,0 +1,21 @@
+feature	sewage_n	transit_n	sewage_prop	transit_prop	overall_n	overall_prop	prevalence_difference	strict_category	association_category
+Biocide and metal resistance	14	3	0.875	0.1875	17	0.53125	-0.6875	Shared	Sewage-associated
+Acid resistance	12	2	0.75	0.125	14	0.4375	-0.625	Shared	Sewage-associated
+Arsenic resistance	14	4	0.875	0.25	18	0.5625	-0.625	Shared	Sewage-associated
+Multi-drug resistance	12	2	0.75	0.125	14	0.4375	-0.625	Shared	Sewage-associated
+Peroxide resistance	14	4	0.875	0.25	18	0.5625	-0.625	Shared	Sewage-associated
+Nickel resistance	11	2	0.6875	0.125	13	0.40625	-0.5625	Shared	Sewage-associated
+Acetate resistance	10	2	0.625	0.125	12	0.375	-0.5	Shared	Sewage-associated
+Aminocoumarins	10	2	0.625	0.125	12	0.375	-0.5	Shared	Sewage-associated
+Drug and biocide and metal resistance	10	2	0.625	0.125	12	0.375	-0.5	Shared	Sewage-associated
+Fosfomycin	12	5	0.75	0.3125	17	0.53125	-0.4375	Shared	Broadly shared
+Phenolic compound resistance	9	2	0.5625	0.125	11	0.34375	-0.4375	Shared	Broadly shared
+Sodium resistance	7	0	0.4375	0	7	0.21875	-0.4375	Sewage-specific	Sewage-specific
+Copper resistance	16	10	1	0.625	26	0.8125	-0.375	Shared	Broadly shared
+Multi-biocide resistance	11	5	0.6875	0.3125	16	0.5	-0.375	Shared	Broadly shared
+Bacitracin	5	0	0.3125	0	5	0.15625	-0.3125	Sewage-specific	Sewage-specific
+Biguanide resistance	5	0	0.3125	0	5	0.15625	-0.3125	Sewage-specific	Sewage-specific
+Drug and biocide resistance	16	11	1	0.6875	27	0.84375	-0.3125	Shared	Broadly shared
+Zinc resistance	10	5	0.625	0.3125	15	0.46875	-0.3125	Shared	Broadly shared
+Elfamycins	15	11	0.9375	0.6875	26	0.8125	-0.25	Shared	Broadly shared
+Lipopeptides	11	7	0.6875	0.4375	18	0.5625	-0.25	Shared	Broadly shared

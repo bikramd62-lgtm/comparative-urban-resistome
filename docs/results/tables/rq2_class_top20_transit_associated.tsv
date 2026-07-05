@@ -1,0 +1,21 @@
+feature	sewage_n	transit_n	sewage_prop	transit_prop	overall_n	overall_prop	prevalence_difference	strict_category	association_category
+Oxazolidinone	4	15	0.25	0.9375	19	0.59375	0.6875	Shared	Transit-associated
+Fluoroquinolones	8	14	0.5	0.875	22	0.6875	0.375	Shared	Broadly shared
+Lead resistance	0	6	0	0.375	6	0.1875	0.375	Transit-specific	Transit-specific
+Fusidic acid	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Mycobacterium tuberculosis-specific Drug	0	2	0	0.125	2	0.0625	0.125	Transit-specific	Transit-specific
+Tellurium resistance	0	2	0	0.125	2	0.0625	0.125	Transit-specific	Transit-specific
+Aminoglycosides	16	16	1	1	32	1	0	Shared	Broadly shared
+MLS	16	16	1	1	32	1	0	Shared	Broadly shared
+Tetracyclines	16	16	1	1	32	1	0	Shared	Broadly shared
+Trimethoprim	4	4	0.25	0.25	8	0.25	0	Shared	Broadly shared
+Phenicol	6	5	0.375	0.3125	11	0.34375	-0.0625	Shared	Broadly shared
+Rifampin	10	9	0.625	0.5625	19	0.59375	-0.0625	Shared	Broadly shared
+Cationic antimicrobial peptides	16	13	1	0.8125	29	0.90625	-0.1875	Shared	Broadly shared
+Chromium resistance	6	3	0.375	0.1875	9	0.28125	-0.1875	Shared	Broadly shared
+Mercury resistance	16	13	1	0.8125	29	0.90625	-0.1875	Shared	Broadly shared
+Sulfonamides	9	6	0.5625	0.375	15	0.46875	-0.1875	Shared	Broadly shared
+betalactams	16	13	1	0.8125	29	0.90625	-0.1875	Shared	Broadly shared
+Elfamycins	15	11	0.9375	0.6875	26	0.8125	-0.25	Shared	Broadly shared
+Lipopeptides	11	7	0.6875	0.4375	18	0.5625	-0.25	Shared	Broadly shared
+Multi-metal resistance	16	12	1	0.75	28	0.875	-0.25	Shared	Broadly shared
