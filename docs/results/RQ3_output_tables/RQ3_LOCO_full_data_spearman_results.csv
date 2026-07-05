@@ -1,0 +1,19 @@
+response,covariate,n,rho,p_value,p_FDR_BH,response_label,covariate_label,relationship
+jaccard,elevation_m,16,-0.37058823529411766,0.15765046473782068,0.35471354566009655,Jaccard similarity,Elevation,Jaccard similarity vs Elevation
+jaccard,gdp_pc,16,-0.4032377839281032,0.12144556683501995,0.31228860043290846,Jaccard similarity,GDP per capita,Jaccard similarity vs GDP per capita
+jaccard,humidity_june,16,0.0911764705882353,0.7370049501736589,0.8448469792131229,Jaccard similarity,June relative humidity,Jaccard similarity vs June relative humidity
+jaccard,pop_density,16,-0.5588235294117646,0.02443651142450584,0.2307784272817382,Jaccard similarity,Population density,Jaccard similarity vs Population density
+jaccard,population,16,-0.4705882352941176,0.06581947250108118,0.28206338924846386,Jaccard similarity,City population,Jaccard similarity vs City population
+jaccard,precipitation_june,16,-0.1264705882352941,0.6406944408168836,0.8237499953359934,Jaccard similarity,June precipitation,Jaccard similarity vs June precipitation
+jaccard,sanitation,16,-0.35346135534751466,0.17927285792318035,0.3578956089273046,Jaccard similarity,Sanitation coverage,Jaccard similarity vs Sanitation coverage
+jaccard,temp_june_c,16,0.049999999999999996,0.8540995521297435,0.8540995521297435,Jaccard similarity,Average June temperature,Jaccard similarity vs Average June temperature
+jaccard,wastewater,16,-0.2707874169444197,0.3103906126453603,0.4655859189680404,Jaccard similarity,Wastewater-treatment coverage,Jaccard similarity vs Wastewater-treatment coverage
+shared_arg_groups,elevation_m,16,-0.08142297624597229,0.7643524049920344,0.8448469792131229,Shared ARG-group count,Elevation,Shared ARG-group count vs Elevation
+shared_arg_groups,gdp_pc,16,-0.4526005395579799,0.07835094145790662,0.28206338924846386,Shared ARG-group count,GDP per capita,Shared ARG-group count vs GDP per capita
+shared_arg_groups,humidity_june,16,0.5299895544737834,0.03471709194776949,0.2307784272817382,Shared ARG-group count,June relative humidity,Shared ARG-group count vs June relative humidity
+shared_arg_groups,pop_density,16,-0.43228198297861653,0.0944811724754425,0.28344351742632745,Shared ARG-group count,Population density,Shared ARG-group count vs Population density
+shared_arg_groups,population,16,-0.06957963424655815,0.797911035923505,0.8448469792131229,Shared ARG-group count,City population,Shared ARG-group count vs City population
+shared_arg_groups,precipitation_june,16,0.33161357598359625,0.2095758745992518,0.3578956089273046,Shared ARG-group count,June precipitation,Shared ARG-group count vs June precipitation
+shared_arg_groups,sanitation,16,-0.3254306229658814,0.21871398323335278,0.3578956089273046,Shared ARG-group count,Sanitation coverage,Shared ARG-group count vs Sanitation coverage
+shared_arg_groups,temp_june_c,16,0.5211070479742227,0.03846307121362303,0.2307784272817382,Shared ARG-group count,Average June temperature,Shared ARG-group count vs Average June temperature
+shared_arg_groups,wastewater,16,-0.20518878798291393,0.4458545316067425,0.6173370437631819,Shared ARG-group count,Wastewater-treatment coverage,Shared ARG-group count vs Wastewater-treatment coverage
