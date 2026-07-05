@@ -1,0 +1,513 @@
+Sewage_profile	Transit_profile	Sewage_city	Transit_city	Jaccard_distance	Jaccard_similarity	Comparison
+Lisbon_Sewage	Barcelona_Transit	Lisbon	Barcelona	0.906542056074766	0.0934579439252337	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Barcelona_Transit	Barcelona	Barcelona	0.864406779661017	0.135593220338983	Within-city
+(Sewage vs Transit)
+Berlin_Sewage	Barcelona_Transit	Berlin	Barcelona	0.875	0.125	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Barcelona_Transit	Hong_Kong	Barcelona	0.966942148760331	0.0330578512396693	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Barcelona_Transit	Porto	Barcelona	0.903225806451613	0.0967741935483871	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Barcelona_Transit	Santiago	Barcelona	0.91566265060241	0.0843373493975904	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Barcelona_Transit	Singapore	Barcelona	0.966942148760331	0.0330578512396693	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Barcelona_Transit	Sofia	Barcelona	0.890625	0.109375	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Barcelona_Transit	Taipei	Barcelona	0.946341463414634	0.0536585365853659	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Barcelona_Transit	Vienna	Barcelona	0.904255319148936	0.0957446808510639	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Barcelona_Transit	Bogota	Barcelona	0.962765957446808	0.0372340425531915	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Barcelona_Transit	Hanoi	Barcelona	0.963302752293578	0.0366972477064219	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Barcelona_Transit	Ilorin	Barcelona	0.885714285714286	0.114285714285714	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Barcelona_Transit	Kuala_Lumpur	Barcelona	0.949438202247191	0.0505617977528091	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Barcelona_Transit	Oslo	Barcelona	0.87037037037037	0.12962962962963	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Barcelona_Transit	Rio_de_Janeiro	Barcelona	0.884057971014493	0.115942028985507	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Berlin_Transit	Lisbon	Berlin	0.915966386554622	0.0840336134453782	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Berlin_Transit	Barcelona	Berlin	0.887323943661972	0.112676056338028	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Berlin_Transit	Berlin	Berlin	0.892857142857143	0.107142857142857	Within-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Berlin_Transit	Hong_Kong	Berlin	0.956175298804781	0.0438247011952191	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Berlin_Transit	Porto	Berlin	0.903846153846154	0.0961538461538461	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Berlin_Transit	Santiago	Berlin	0.926315789473684	0.0736842105263158	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Berlin_Transit	Singapore	Berlin	0.956175298804781	0.0438247011952191	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Berlin_Transit	Sofia	Berlin	0.893333333333333	0.106666666666667	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Berlin_Transit	Taipei	Berlin	0.93953488372093	0.0604651162790697	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Berlin_Transit	Vienna	Berlin	0.894230769230769	0.105769230769231	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Berlin_Transit	Bogota	Berlin	0.949238578680203	0.050761421319797	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Berlin_Transit	Hanoi	Berlin	0.960698689956332	0.0393013100436681	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Berlin_Transit	Ilorin	Berlin	0.902439024390244	0.0975609756097561	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Berlin_Transit	Kuala_Lumpur	Berlin	0.941489361702128	0.0585106382978724	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Berlin_Transit	Oslo	Berlin	0.91044776119403	0.0895522388059702	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Berlin_Transit	Rio_de_Janeiro	Berlin	0.901234567901235	0.0987654320987654	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Bogota_Transit	Lisbon	Bogota	0.876106194690265	0.123893805309735	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Bogota_Transit	Barcelona	Bogota	0.815384615384615	0.184615384615385	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Bogota_Transit	Berlin	Bogota	0.833333333333333	0.166666666666667	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Bogota_Transit	Hong_Kong	Bogota	0.947368421052632	0.0526315789473684	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Bogota_Transit	Porto	Bogota	0.833333333333333	0.166666666666667	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Bogota_Transit	Santiago	Bogota	0.863636363636364	0.136363636363636	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Bogota_Transit	Singapore	Bogota	0.934426229508197	0.0655737704918032	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Bogota_Transit	Sofia	Bogota	0.826086956521739	0.173913043478261	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Bogota_Transit	Taipei	Bogota	0.923809523809524	0.0761904761904761	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Bogota_Transit	Vienna	Bogota	0.858585858585858	0.141414141414142	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Bogota_Transit	Bogota	Bogota	0.937823834196891	0.0621761658031087	Within-city
+(Sewage vs Transit)
+Hanoi_Sewage	Bogota_Transit	Hanoi	Bogota	0.936936936936937	0.063063063063063	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Bogota_Transit	Ilorin	Bogota	0.871794871794872	0.128205128205128	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Bogota_Transit	Kuala_Lumpur	Bogota	0.917582417582418	0.0824175824175825	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Bogota_Transit	Oslo	Bogota	0.796610169491525	0.203389830508475	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Bogota_Transit	Rio_de_Janeiro	Bogota	0.87012987012987	0.12987012987013	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Hanoi_Transit	Lisbon	Hanoi	0.802816901408451	0.197183098591549	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Hanoi_Transit	Barcelona	Hanoi	0.823529411764706	0.176470588235294	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Hanoi_Transit	Berlin	Hanoi	0.824561403508772	0.175438596491228	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Hanoi_Transit	Hong_Kong	Hanoi	0.792828685258964	0.207171314741036	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Hanoi_Transit	Porto	Hanoi	0.807692307692308	0.192307692307692	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Hanoi_Transit	Santiago	Hanoi	0.777777777777778	0.222222222222222	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Hanoi_Transit	Singapore	Hanoi	0.788	0.212	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Hanoi_Transit	Sofia	Hanoi	0.819047619047619	0.180952380952381	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Hanoi_Transit	Taipei	Hanoi	0.804444444444444	0.195555555555556	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Hanoi_Transit	Vienna	Hanoi	0.78125	0.21875	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Hanoi_Transit	Bogota	Hanoi	0.784313725490196	0.215686274509804	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Hanoi_Transit	Hanoi	Hanoi	0.770925110132159	0.229074889867841	Within-city
+(Sewage vs Transit)
+Ilorin_Sewage	Hanoi_Transit	Ilorin	Hanoi	0.787037037037037	0.212962962962963	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Hanoi_Transit	Kuala_Lumpur	Hanoi	0.787878787878788	0.212121212121212	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Hanoi_Transit	Oslo	Hanoi	0.824742268041237	0.175257731958763	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Hanoi_Transit	Rio_de_Janeiro	Hanoi	0.796296296296296	0.203703703703704	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Hong_Kong_Transit	Lisbon	Hong_Kong	0.838983050847458	0.161016949152542	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Hong_Kong_Transit	Barcelona	Hong_Kong	0.791666666666667	0.208333333333333	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Hong_Kong_Transit	Berlin	Hong_Kong	0.811764705882353	0.188235294117647	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Hong_Kong_Transit	Hong_Kong	Hong_Kong	0.937007874015748	0.062992125984252	Within-city
+(Sewage vs Transit)
+Porto_Sewage	Hong_Kong_Transit	Porto	Hong_Kong	0.815533980582524	0.184466019417476	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Hong_Kong_Transit	Santiago	Hong_Kong	0.842105263157895	0.157894736842105	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Hong_Kong_Transit	Singapore	Hong_Kong	0.932806324110672	0.0671936758893281	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Hong_Kong_Transit	Sofia	Hong_Kong	0.786666666666667	0.213333333333333	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Hong_Kong_Transit	Taipei	Hong_Kong	0.91743119266055	0.0825688073394496	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Hong_Kong_Transit	Vienna	Hong_Kong	0.828571428571429	0.171428571428571	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Hong_Kong_Transit	Bogota	Hong_Kong	0.940886699507389	0.0591133004926108	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Hong_Kong_Transit	Hanoi	Hong_Kong	0.916299559471366	0.0837004405286343	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Hong_Kong_Transit	Ilorin	Hong_Kong	0.804878048780488	0.195121951219512	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Hong_Kong_Transit	Kuala_Lumpur	Hong_Kong	0.898936170212766	0.101063829787234	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Hong_Kong_Transit	Oslo	Hong_Kong	0.791044776119403	0.208955223880597	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Hong_Kong_Transit	Rio_de_Janeiro	Hong_Kong	0.817073170731707	0.182926829268293	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Ilorin_Transit	Lisbon	Ilorin	0.754098360655738	0.245901639344262	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Ilorin_Transit	Barcelona	Ilorin	0.725	0.275	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Ilorin_Transit	Berlin	Ilorin	0.752688172043011	0.247311827956989	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Ilorin_Transit	Hong_Kong	Ilorin	0.86	0.14	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Ilorin_Transit	Porto	Ilorin	0.731481481481482	0.268518518518518	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Ilorin_Transit	Santiago	Ilorin	0.774509803921569	0.225490196078431	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Ilorin_Transit	Singapore	Ilorin	0.850806451612903	0.149193548387097	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Ilorin_Transit	Sofia	Ilorin	0.707317073170732	0.292682926829268	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Ilorin_Transit	Taipei	Ilorin	0.827102803738318	0.172897196261682	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Ilorin_Transit	Vienna	Ilorin	0.756756756756757	0.243243243243243	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Ilorin_Transit	Bogota	Ilorin	0.872549019607843	0.127450980392157	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Ilorin_Transit	Hanoi	Ilorin	0.845132743362832	0.154867256637168	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Ilorin_Transit	Ilorin	Ilorin	0.744444444444444	0.255555555555556	Within-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Ilorin_Transit	Kuala_Lumpur	Ilorin	0.819148936170213	0.180851063829787	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Ilorin_Transit	Oslo	Ilorin	0.753246753246753	0.246753246753247	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Ilorin_Transit	Rio_de_Janeiro	Ilorin	0.782608695652174	0.217391304347826	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Kuala_Lumpur_Transit	Lisbon	Kuala_Lumpur	0.767605633802817	0.232394366197183	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Kuala_Lumpur_Transit	Barcelona	Kuala_Lumpur	0.831775700934579	0.168224299065421	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Kuala_Lumpur_Transit	Berlin	Kuala_Lumpur	0.801724137931034	0.198275862068966	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Kuala_Lumpur_Transit	Hong_Kong	Kuala_Lumpur	0.758064516129032	0.241935483870968	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Kuala_Lumpur_Transit	Porto	Kuala_Lumpur	0.796992481203007	0.203007518796993	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Kuala_Lumpur_Transit	Santiago	Kuala_Lumpur	0.766666666666667	0.233333333333333	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Kuala_Lumpur_Transit	Singapore	Kuala_Lumpur	0.763052208835341	0.236947791164659	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Kuala_Lumpur_Transit	Sofia	Kuala_Lumpur	0.81651376146789	0.18348623853211	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Kuala_Lumpur_Transit	Taipei	Kuala_Lumpur	0.771300448430493	0.228699551569507	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Kuala_Lumpur_Transit	Vienna	Kuala_Lumpur	0.732283464566929	0.267716535433071	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Kuala_Lumpur_Transit	Bogota	Kuala_Lumpur	0.747524752475248	0.252475247524752	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Kuala_Lumpur_Transit	Hanoi	Kuala_Lumpur	0.754385964912281	0.245614035087719	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Kuala_Lumpur_Transit	Ilorin	Kuala_Lumpur	0.807017543859649	0.192982456140351	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Kuala_Lumpur_Transit	Kuala_Lumpur	Kuala_Lumpur	0.756345177664975	0.243654822335025	Within-city
+(Sewage vs Transit)
+Oslo_Sewage	Kuala_Lumpur_Transit	Oslo	Kuala_Lumpur	0.833333333333333	0.166666666666667	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Kuala_Lumpur_Transit	Rio_de_Janeiro	Kuala_Lumpur	0.783783783783784	0.216216216216216	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Lisbon_Transit	Lisbon	Lisbon	0.848214285714286	0.151785714285714	Within-city
+(Sewage vs Transit)
+Barcelona_Sewage	Lisbon_Transit	Barcelona	Lisbon	0.838235294117647	0.161764705882353	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Lisbon_Transit	Berlin	Lisbon	0.8375	0.1625	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Lisbon_Transit	Hong_Kong	Lisbon	0.926229508196721	0.0737704918032787	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Lisbon_Transit	Porto	Lisbon	0.8	0.2	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Lisbon_Transit	Santiago	Lisbon	0.840909090909091	0.159090909090909	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Lisbon_Transit	Singapore	Lisbon	0.934959349593496	0.0650406504065041	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Lisbon_Transit	Sofia	Lisbon	0.814285714285714	0.185714285714286	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Lisbon_Transit	Taipei	Lisbon	0.924528301886792	0.0754716981132075	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Lisbon_Transit	Vienna	Lisbon	0.861386138613861	0.138613861386139	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Lisbon_Transit	Bogota	Lisbon	0.938461538461539	0.0615384615384614	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Lisbon_Transit	Hanoi	Lisbon	0.923076923076923	0.076923076923077	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Lisbon_Transit	Ilorin	Lisbon	0.875	0.125	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Lisbon_Transit	Kuala_Lumpur	Lisbon	0.918478260869565	0.0815217391304348	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Lisbon_Transit	Oslo	Lisbon	0.80327868852459	0.19672131147541	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Lisbon_Transit	Rio_de_Janeiro	Lisbon	0.813333333333333	0.186666666666667	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Oslo_Transit	Lisbon	Oslo	0.888888888888889	0.111111111111111	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Oslo_Transit	Barcelona	Oslo	0.833333333333333	0.166666666666667	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Oslo_Transit	Berlin	Oslo	0.849315068493151	0.150684931506849	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Oslo_Transit	Hong_Kong	Oslo	0.958847736625514	0.0411522633744856	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Oslo_Transit	Porto	Oslo	0.882978723404255	0.117021276595745	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Oslo_Transit	Santiago	Oslo	0.892857142857143	0.107142857142857	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Oslo_Transit	Singapore	Oslo	0.958847736625514	0.0411522633744856	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Oslo_Transit	Sofia	Oslo	0.861538461538462	0.138461538461538	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Oslo_Transit	Taipei	Oslo	0.942028985507246	0.0579710144927537	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Oslo_Transit	Vienna	Oslo	0.88421052631579	0.11578947368421	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Oslo_Transit	Bogota	Oslo	0.957894736842105	0.0421052631578946	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Oslo_Transit	Hanoi	Oslo	0.954337899543379	0.045662100456621	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Oslo_Transit	Ilorin	Oslo	0.842857142857143	0.157142857142857	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Oslo_Transit	Kuala_Lumpur	Oslo	0.938547486033519	0.0614525139664805	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Oslo_Transit	Oslo	Oslo	0.836363636363636	0.163636363636364	Within-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Oslo_Transit	Rio_de_Janeiro	Oslo	0.873239436619718	0.126760563380282	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Porto_Transit	Lisbon	Porto	0.858490566037736	0.141509433962264	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Porto_Transit	Barcelona	Porto	0.816666666666667	0.183333333333333	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Porto_Transit	Berlin	Porto	0.819444444444444	0.180555555555556	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Porto_Transit	Hong_Kong	Porto	0.946058091286307	0.053941908713693	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Porto_Transit	Porto	Porto	0.835164835164835	0.164835164835165	Within-city
+(Sewage vs Transit)
+Santiago_Sewage	Porto_Transit	Santiago	Porto	0.880952380952381	0.119047619047619	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Porto_Transit	Singapore	Porto	0.941666666666667	0.0583333333333333	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Porto_Transit	Sofia	Porto	0.863636363636364	0.136363636363636	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Porto_Transit	Taipei	Porto	0.926829268292683	0.0731707317073171	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Porto_Transit	Vienna	Porto	0.885416666666667	0.114583333333333	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Porto_Transit	Bogota	Porto	0.93010752688172	0.0698924731182796	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Porto_Transit	Hanoi	Porto	0.940092165898618	0.0599078341013825	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Porto_Transit	Ilorin	Porto	0.906666666666667	0.0933333333333333	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Porto_Transit	Kuala_Lumpur	Porto	0.914772727272727	0.0852272727272727	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Porto_Transit	Oslo	Porto	0.859649122807018	0.140350877192982	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Porto_Transit	Rio_de_Janeiro	Porto	0.842857142857143	0.157142857142857	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Rio_de_Janeiro_Transit	Lisbon	Rio_de_Janeiro	0.826446280991735	0.173553719008265	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Rio_de_Janeiro_Transit	Barcelona	Rio_de_Janeiro	0.756756756756757	0.243243243243243	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Rio_de_Janeiro_Transit	Berlin	Rio_de_Janeiro	0.795454545454545	0.204545454545455	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Rio_de_Janeiro_Transit	Hong_Kong	Rio_de_Janeiro	0.91304347826087	0.0869565217391304	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Rio_de_Janeiro_Transit	Porto	Rio_de_Janeiro	0.80188679245283	0.19811320754717	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Rio_de_Janeiro_Transit	Santiago	Rio_de_Janeiro	0.838383838383838	0.161616161616162	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Rio_de_Janeiro_Transit	Singapore	Rio_de_Janeiro	0.904382470119522	0.0956175298804781	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Rio_de_Janeiro_Transit	Sofia	Rio_de_Janeiro	0.753246753246753	0.246753246753247	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Rio_de_Janeiro_Transit	Taipei	Rio_de_Janeiro	0.87906976744186	0.12093023255814	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Rio_de_Janeiro_Transit	Vienna	Rio_de_Janeiro	0.780952380952381	0.219047619047619	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Rio_de_Janeiro_Transit	Bogota	Rio_de_Janeiro	0.926829268292683	0.0731707317073171	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Rio_de_Janeiro_Transit	Hanoi	Rio_de_Janeiro	0.908695652173913	0.091304347826087	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Rio_de_Janeiro_Transit	Ilorin	Rio_de_Janeiro	0.816091954022989	0.183908045977011	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Rio_de_Janeiro_Transit	Kuala_Lumpur	Rio_de_Janeiro	0.895833333333333	0.104166666666667	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Rio_de_Janeiro_Transit	Oslo	Rio_de_Janeiro	0.753623188405797	0.246376811594203	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Rio_de_Janeiro_Transit	Rio_de_Janeiro	Rio_de_Janeiro	0.827586206896552	0.172413793103448	Within-city
+(Sewage vs Transit)
+Lisbon_Sewage	Santiago_Transit	Lisbon	Santiago	0.915094339622642	0.0849056603773585	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Santiago_Transit	Barcelona	Santiago	0.898305084745763	0.101694915254237	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Santiago_Transit	Berlin	Santiago	0.902777777777778	0.0972222222222221	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Santiago_Transit	Hong_Kong	Santiago	0.970954356846473	0.029045643153527	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Santiago_Transit	Porto	Santiago	0.91304347826087	0.0869565217391304	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Santiago_Transit	Santiago	Santiago	0.926829268292683	0.0731707317073171	Within-city
+(Sewage vs Transit)
+Singapore_Sewage	Santiago_Transit	Singapore	Santiago	0.970954356846473	0.029045643153527	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Santiago_Transit	Sofia	Santiago	0.921875	0.078125	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Santiago_Transit	Taipei	Santiago	0.95609756097561	0.0439024390243902	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Santiago_Transit	Vienna	Santiago	0.913978494623656	0.086021505376344	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Santiago_Transit	Bogota	Santiago	0.962365591397849	0.0376344086021505	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Santiago_Transit	Hanoi	Santiago	0.967741935483871	0.032258064516129	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Santiago_Transit	Ilorin	Santiago	0.914285714285714	0.0857142857142857	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Santiago_Transit	Kuala_Lumpur	Santiago	0.954802259887006	0.0451977401129944	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Santiago_Transit	Oslo	Santiago	0.886792452830189	0.113207547169811	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Santiago_Transit	Rio_de_Janeiro	Santiago	0.91304347826087	0.0869565217391304	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Singapore_Transit	Lisbon	Singapore	0.886792452830189	0.113207547169811	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Singapore_Transit	Barcelona	Singapore	0.827586206896552	0.172413793103448	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Singapore_Transit	Berlin	Singapore	0.861111111111111	0.138888888888889	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Singapore_Transit	Hong_Kong	Singapore	0.95850622406639	0.04149377593361	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Singapore_Transit	Porto	Singapore	0.880434782608696	0.119565217391304	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Singapore_Transit	Santiago	Singapore	0.890243902439024	0.109756097560976	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Singapore_Transit	Singapore	Singapore	0.962809917355372	0.0371900826446282	Within-city
+(Sewage vs Transit)
+Sofia_Sewage	Singapore_Transit	Sofia	Singapore	0.838709677419355	0.161290322580645	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Singapore_Transit	Taipei	Singapore	0.941463414634146	0.0585365853658536	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Singapore_Transit	Vienna	Singapore	0.881720430107527	0.118279569892473	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Singapore_Transit	Bogota	Singapore	0.962962962962963	0.037037037037037	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Singapore_Transit	Hanoi	Singapore	0.953917050691244	0.0460829493087558	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Singapore_Transit	Ilorin	Singapore	0.838235294117647	0.161764705882353	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Singapore_Transit	Kuala_Lumpur	Singapore	0.937853107344633	0.0621468926553672	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Singapore_Transit	Oslo	Singapore	0.830188679245283	0.169811320754717	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Singapore_Transit	Rio_de_Janeiro	Singapore	0.852941176470588	0.147058823529412	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Sofia_Transit	Lisbon	Sofia	0.848739495798319	0.151260504201681	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Sofia_Transit	Barcelona	Sofia	0.774647887323944	0.225352112676056	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Sofia_Transit	Berlin	Sofia	0.797619047619048	0.202380952380952	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Sofia_Transit	Hong_Kong	Sofia	0.932806324110672	0.0671936758893281	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Sofia_Transit	Porto	Sofia	0.815533980582524	0.184466019417476	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Sofia_Transit	Santiago	Sofia	0.829787234042553	0.170212765957447	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Sofia_Transit	Singapore	Sofia	0.928571428571429	0.0714285714285714	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Sofia_Transit	Sofia	Sofia	0.77027027027027	0.22972972972973	Within-city
+(Sewage vs Transit)
+Taipei_Sewage	Sofia_Transit	Taipei	Sofia	0.912442396313364	0.0875576036866359	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Sofia_Transit	Vienna	Sofia	0.817307692307692	0.182692307692308	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Sofia_Transit	Bogota	Sofia	0.940886699507389	0.0591133004926108	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Sofia_Transit	Hanoi	Sofia	0.921052631578947	0.0789473684210525	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Sofia_Transit	Ilorin	Sofia	0.804878048780488	0.195121951219512	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Sofia_Transit	Kuala_Lumpur	Sofia	0.904761904761905	0.0952380952380953	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Sofia_Transit	Oslo	Sofia	0.753846153846154	0.246153846153846	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Sofia_Transit	Rio_de_Janeiro	Sofia	0.845238095238095	0.154761904761905	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Taipei_Transit	Lisbon	Taipei	0.854700854700855	0.145299145299145	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Taipei_Transit	Barcelona	Taipei	0.8	0.2	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Taipei_Transit	Berlin	Taipei	0.790123456790124	0.209876543209876	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Taipei_Transit	Hong_Kong	Taipei	0.94047619047619	0.0595238095238095	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Taipei_Transit	Porto	Taipei	0.844660194174757	0.155339805825243	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Taipei_Transit	Santiago	Taipei	0.849462365591398	0.150537634408602	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Taipei_Transit	Singapore	Taipei	0.936254980079681	0.0637450199203188	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Taipei_Transit	Sofia	Taipei	0.794520547945205	0.205479452054795	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Taipei_Transit	Taipei	Taipei	0.931192660550459	0.0688073394495413	Within-city
+(Sewage vs Transit)
+Vienna_Sewage	Taipei_Transit	Vienna	Taipei	0.83495145631068	0.16504854368932	Between-city
+(Sewage vs Transit)
+Bogota_Sewage	Taipei_Transit	Bogota	Taipei	0.95049504950495	0.0495049504950495	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Taipei_Transit	Hanoi	Taipei	0.943478260869565	0.0565217391304348	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Taipei_Transit	Ilorin	Taipei	0.841463414634146	0.158536585365854	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Taipei_Transit	Kuala_Lumpur	Taipei	0.909090909090909	0.0909090909090909	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Taipei_Transit	Oslo	Taipei	0.78125	0.21875	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Taipei_Transit	Rio_de_Janeiro	Taipei	0.867469879518072	0.132530120481928	Between-city
+(Sewage vs Transit)
+Lisbon_Sewage	Vienna_Transit	Lisbon	Vienna	0.811965811965812	0.188034188034188	Between-city
+(Sewage vs Transit)
+Barcelona_Sewage	Vienna_Transit	Barcelona	Vienna	0.813333333333333	0.186666666666667	Between-city
+(Sewage vs Transit)
+Berlin_Sewage	Vienna_Transit	Berlin	Vienna	0.802325581395349	0.197674418604651	Between-city
+(Sewage vs Transit)
+Hong_Kong_Sewage	Vienna_Transit	Hong_Kong	Vienna	0.920634920634921	0.0793650793650794	Between-city
+(Sewage vs Transit)
+Porto_Sewage	Vienna_Transit	Porto	Vienna	0.819047619047619	0.180952380952381	Between-city
+(Sewage vs Transit)
+Santiago_Sewage	Vienna_Transit	Santiago	Vienna	0.821052631578947	0.178947368421053	Between-city
+(Sewage vs Transit)
+Singapore_Sewage	Vienna_Transit	Singapore	Vienna	0.920634920634921	0.0793650793650794	Between-city
+(Sewage vs Transit)
+Sofia_Sewage	Vienna_Transit	Sofia	Vienna	0.792207792207792	0.207792207792208	Between-city
+(Sewage vs Transit)
+Taipei_Sewage	Vienna_Transit	Taipei	Vienna	0.908256880733945	0.0917431192660551	Between-city
+(Sewage vs Transit)
+Vienna_Sewage	Vienna_Transit	Vienna	Vienna	0.80952380952381	0.19047619047619	Within-city
+(Sewage vs Transit)
+Bogota_Sewage	Vienna_Transit	Bogota	Vienna	0.920398009950249	0.0796019900497512	Between-city
+(Sewage vs Transit)
+Hanoi_Sewage	Vienna_Transit	Hanoi	Vienna	0.91703056768559	0.0829694323144105	Between-city
+(Sewage vs Transit)
+Ilorin_Sewage	Vienna_Transit	Ilorin	Vienna	0.765432098765432	0.234567901234568	Between-city
+(Sewage vs Transit)
+Kuala_Lumpur_Sewage	Vienna_Transit	Kuala_Lumpur	Vienna	0.894179894179894	0.105820105820106	Between-city
+(Sewage vs Transit)
+Oslo_Sewage	Vienna_Transit	Oslo	Vienna	0.797101449275362	0.202898550724638	Between-city
+(Sewage vs Transit)
+Rio_de_Janeiro_Sewage	Vienna_Transit	Rio_de_Janeiro	Vienna	0.835294117647059	0.164705882352941	Between-city
+(Sewage vs Transit)
