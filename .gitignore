@@ -1,0 +1,60 @@
+# Raw sequencing data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Alignment files
+*.sam
+*.bam
+*.bai
+
+# Bowtie2 indexes
+*.bt2
+*.bt2l
+
+# Large sequence/database files
+*.fa
+*.fasta
+*.fna
+*.ffn
+*.faa
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.gz
+
+# Logs and temporary outputs
+*.log
+*.out
+*.err
+tmp/
+temp/
+
+# R files
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Large local folders
+raw_data/
+clean_reads/
+human_depleted_reads/
+kneaddata_output/
+fastqc_output/
+multiqc_output/
+bowtie2_output/
+sam_files/
+bam_files/
+MEGARes_database/
+bowtie2_indexes/
