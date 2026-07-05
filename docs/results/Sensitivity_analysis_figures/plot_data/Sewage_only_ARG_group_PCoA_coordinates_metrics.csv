@@ -1,0 +1,17 @@
+"PCoA1","PCoA2","SampleID","City","Environment","Analysis","ARG_richness","Total_ARG_count","Number_of_samples"
+-0.122999688805435,-0.0817276178539914,"Lisbon_Sewage","Lisbon","Sewage","Sewage_only_ARG_group",104,23692,4
+-0.365467695141538,-0.114570944378089,"Barcelona_Sewage","Barcelona","Sewage","Sewage_only_ARG_group",54,8616,5
+-0.219871409803585,0.0358086737274611,"Berlin_Sewage","Berlin","Sewage","Sewage_only_ARG_group",68,12124,5
+0.372064303342556,-0.0707063257224634,"Hong_Kong_Sewage","Hong_Kong","Sewage","Sewage_only_ARG_group",237,23381,2
+-0.154173535973479,-0.137270343587872,"Porto_Sewage","Porto","Sewage","Sewage_only_ARG_group",89,21153,4
+-0.135069314025803,0.021924767792202,"Santiago_Sewage","Santiago","Sewage","Sewage_only_ARG_group",77,19927,5
+0.363795867275839,-0.0847344090196262,"Singapore_Sewage","Singapore","Sewage","Sewage_only_ARG_group",237,32266,5
+-0.353201366316144,-0.0698382699533408,"Sofia_Sewage","Sofia","Sewage","Sewage_only_ARG_group",58,19903,5
+0.324849018770049,-0.0254243549618517,"Taipei_Sewage","Taipei","Sewage","Sewage_only_ARG_group",203,23348,4
+-0.162751520575197,-0.120335901418874,"Vienna_Sewage","Vienna","Sewage","Sewage_only_ARG_group",90,20745,5
+0.380038032578257,0.061670054589615,"Bogota_Sewage","Bogota","Sewage","Sewage_only_ARG_group",182,8184,1
+0.386947256676146,-0.025086970722215,"Hanoi_Sewage","Hanoi","Sewage","Sewage_only_ARG_group",213,41732,1
+-0.135929028988182,0.427653285204372,"Ilorin_Sewage","Ilorin","Sewage","Sewage_only_ARG_group",65,4296,5
+0.294002562580769,-0.0453623682426919,"Kuala_Lumpur_Sewage","Kuala_Lumpur","Sewage","Sewage_only_ARG_group",174,15470,5
+-0.384318988102149,-0.12371414301488,"Oslo_Sewage","Oslo","Sewage","Sewage_only_ARG_group",48,15774,4
+-0.0879144934921049,0.351714867562247,"Rio_de_Janeiro_Sewage","Rio_de_Janeiro","Sewage","Sewage_only_ARG_group",64,6342,3

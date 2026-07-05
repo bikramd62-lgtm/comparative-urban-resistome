@@ -1,0 +1,33 @@
+SampleID,City,Environment,City_label,ARG_group_richness,PCoA1,PCoA2
+Barcelona__Sewage,Barcelona,Sewage,Barcelona,54,-0.0726157670847887,0.3367100332751829
+Barcelona__Transit,Barcelona,Transit,Barcelona,13,0.377198576527915,-0.1803216151899813
+Berlin__Sewage,Berlin,Sewage,Berlin,67,-0.13193300912498204,0.2373867631190434
+Berlin__Transit,Berlin,Transit,Berlin,25,0.33083714555643934,-0.23278845946718904
+Bogota__Sewage,Bogota,Sewage,Bogota,182,-0.4321640048781134,-0.26974666469057834
+Bogota__Transit,Bogota,Transit,Bogota,23,0.3469266138884769,-0.14510298110379347
+Hanoi__Sewage,Hanoi,Sewage,Hanoi,204,-0.44700482183872886,-0.24431436437533335
+Hanoi__Transit,Hanoi,Transit,Hanoi,66,-0.023045780573160018,-0.10692849265122943
+Hong_Kong__Sewage,Hong_Kong,Sewage,Hong Kong,229,-0.4682543016772883,-0.23301004110356566
+Hong_Kong__Transit,Hong_Kong,Transit,Hong Kong,33,0.31257779537119984,0.06169500067627435
+Ilorin__Sewage,Ilorin,Sewage,Ilorin,65,-0.10024630437771327,0.12070814176218787
+Ilorin__Transit,Ilorin,Transit,Ilorin,47,0.12083354883765358,0.03826300779725958
+Kuala_Lumpur__Sewage,Kuala_Lumpur,Sewage,Kuala Lumpur,174,-0.4283509856998395,-0.17065820233137569
+Kuala_Lumpur__Transit,Kuala_Lumpur,Transit,Kuala Lumpur,71,-0.055845773998492776,-0.09176577836987916
+Lisbon__Sewage,Lisbon,Sewage,Lisbon,103,-0.2511003453733258,0.19364845300252873
+Lisbon__Transit,Lisbon,Transit,Lisbon,25,0.20653073861665808,-0.08891381058758319
+Oslo__Sewage,Oslo,Sewage,Oslo,43,-0.023110436655985004,0.3558574655488518
+Oslo__Transit,Oslo,Transit,Oslo,16,0.36942771764911536,-0.028795279721566737
+Porto__Sewage,Porto,Sewage,Porto,86,-0.21193117600172431,0.20555314121898585
+Porto__Transit,Porto,Transit,Porto,17,0.3164009399574888,-0.17045880554841333
+Rio_de_Janeiro__Sewage,Rio_de_Janeiro,Sewage,Rio de Janeiro,64,-0.1576129042318146,0.06847428686720847
+Rio_de_Janeiro__Transit,Rio_de_Janeiro,Transit,Rio de Janeiro,37,0.21666304854574708,-0.07679540320334086
+Santiago__Sewage,Santiago,Sewage,Santiago,69,-0.19828956596783065,0.20958590876117303
+Santiago__Transit,Santiago,Transit,Santiago,11,0.38336042026712525,-0.2511513695946298
+Singapore__Sewage,Singapore,Sewage,Singapore,192,-0.4413069507105989,-0.22326098118622836
+Singapore__Transit,Singapore,Transit,Singapore,14,0.29948471200998295,0.032631864650389926
+Sofia__Sewage,Sofia,Sewage,Sofia,58,-0.1121496361132767,0.36750485792684967
+Sofia__Transit,Sofia,Transit,Sofia,33,0.32349253827870805,0.06893132479303109
+Taipei__Sewage,Taipei,Sewage,Taipei,172,-0.4078009483049828,-0.17580905012509984
+Taipei__Transit,Taipei,Transit,Taipei,30,0.2952446842527066,0.10427332721051734
+Vienna__Sewage,Vienna,Sewage,Vienna,89,-0.20219417108731405,0.20559727416754162
+Vienna__Transit,Vienna,Transit,Vienna,35,0.2659784039407462,0.0830004484727612

@@ -1,0 +1,17 @@
+"PCoA1","PCoA2","SampleID","City","Environment","Analysis","ARG_richness","Total_ARG_count","Number_of_samples"
+0.132208855611386,-0.222894535787496,"Barcelona_Transit","Barcelona","Transit","Transit_only_ARG_group",13,14498,5
+0.304775175800476,-0.0227383025337461,"Berlin_Transit","Berlin","Transit","Transit_only_ARG_group",25,7758,5
+0.218410257783343,-0.115544459259482,"Bogota_Transit","Bogota","Transit","Transit_only_ARG_group",23,5885,5
+-0.0138276088756162,0.494161583706339,"Hanoi_Transit","Hanoi","Transit","Transit_only_ARG_group",66,10875,5
+-0.264680432541619,-0.0615358311317577,"Hong_Kong_Transit","Hong_Kong","Transit","Transit_only_ARG_group",33,9012,5
+-0.0653025456835703,0.27655226692611,"Ilorin_Transit","Ilorin","Transit","Transit_only_ARG_group",48,27929,5
+-0.118586271309363,0.48590684293717,"Kuala_Lumpur_Transit","Kuala_Lumpur","Transit","Transit_only_ARG_group",71,24455,5
+0.35598224089235,0.0693427811632902,"Lisbon_Transit","Lisbon","Transit","Transit_only_ARG_group",25,22076,5
+-0.218538984927612,-0.248700103782137,"Oslo_Transit","Oslo","Transit","Transit_only_ARG_group",16,4016,5
+0.246707302664741,-0.162701620380651,"Porto_Transit","Porto","Transit","Transit_only_ARG_group",17,5094,5
+0.285601477290007,0.126050162880596,"Rio_de_Janeiro_Transit","Rio_de_Janeiro","Transit","Transit_only_ARG_group",38,19925,5
+0.261358221319981,-0.215024762473838,"Santiago_Transit","Santiago","Transit","Transit_only_ARG_group",11,3724,5
+-0.236201690337019,-0.204764752670771,"Singapore_Transit","Singapore","Transit","Transit_only_ARG_group",14,2268,5
+-0.24877049616245,-0.0662545023783219,"Sofia_Transit","Sofia","Transit","Transit_only_ARG_group",33,12333,5
+-0.341966869405908,-0.114592188764583,"Taipei_Transit","Taipei","Transit","Transit_only_ARG_group",30,3129,5
+-0.297168632119126,-0.0172625784507233,"Vienna_Transit","Vienna","Transit","Transit_only_ARG_group",35,8841,5
