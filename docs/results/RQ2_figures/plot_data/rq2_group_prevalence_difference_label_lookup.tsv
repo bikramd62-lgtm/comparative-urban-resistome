@@ -1,0 +1,31 @@
+feature_full	feature_short
+Macrolide phosphotransferases,MPHG	MPHG
+Aminoglycoside O-nucleotidyltransferases,ANT6	ANT6
+Mercury resistance protein,MERF	MERF
+MLS resistance ABC efflux pumps,MSRE	MSRE
+MLS resistance MFS efflux pumps,MEFC	MEFC
+Class A betalactamases,CTX	CTX
+Macrolide phosphotransferases,MPHE	MPHE
+Tetracycline resistance MFS efflux pumps,TET39	TET39
+Arsenic resistance protein,PSTA	PSTA
+Class A betalactamases,BLAA	BLAA
+Class C betalactamases,MCA	MCA
+Copper resistance protein,COPA	COPA
+Drug and biocide RND efflux regulator,CRP	CRP
+Lincosamide nucleotidyltransferases,LNUC	LNUC
+Multi-metal RND efflux regulator,CZCC	CZCC
+23S rRNA methyltransferases,ERM	ERM
+Drug and biocide MFS efflux regulator,QACR	QACR
+23S rRNA methyltransferases,ERMX	ERMX
+Lead P-type ATPase transporter,PBRA	PBRA
+Multi-metal RND efflux pumps,CZCP	CZCP
+Multi-metal RND efflux regulator,CZCD	CZCD
+Penicillin binding protein regulator,BLAR	BLAR
+Phenicol resistance MFS efflux pumps,CMX	CMX
+Lead P-type ATPase transporter,PBRD	PBRD
+Penicillin binding protein regulator,BLAI	BLAI
+Fluoroquinolone-resistant DNA topoisomerases,GYRA	GYRA
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRS	RRS
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRSA	RRSA
+Tetracycline-resistant 16S ribosomal subunit protein,TET16S	TET16S
+Oxazolidinone-resistant 23S rRNA mutation,O23S	O23S
