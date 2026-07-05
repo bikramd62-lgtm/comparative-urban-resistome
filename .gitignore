@@ -4,6 +4,13 @@
 *.fq
 *.fq.gz
 
+#data/raw_reads/
+*.fastq.gz
+*.fq.gz
+*.sam
+*.bam
+logs/
+
 # Alignment files
 *.sam
 *.bam
