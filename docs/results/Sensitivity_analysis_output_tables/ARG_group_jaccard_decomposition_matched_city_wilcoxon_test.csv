@@ -1,0 +1,2 @@
+"Test","Comparison","Number_of_city_pairs","Cities_with_turnover_greater","Cities_with_nestedness_greater","Median_turnover","Turnover_Q1","Turnover_Q3","Median_nestedness","Nestedness_Q1","Nestedness_Q3","Wilcoxon_V","P_value","Rank_biserial_effect_size"
+"Paired Wilcoxon signed-rank test","Turnover versus nestedness in matched sewage-transit city pairs",16,14,2,0.616847826086957,0.517077267637178,0.67,0.265754734710553,0.186445118587976,0.322479868295546,124,0.00213623046875,0.823529411764706
