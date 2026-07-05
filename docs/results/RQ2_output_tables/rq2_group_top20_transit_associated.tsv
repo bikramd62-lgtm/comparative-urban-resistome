@@ -1,0 +1,21 @@
+feature	sewage_n	transit_n	sewage_prop	transit_prop	overall_n	overall_prop	prevalence_difference	strict_category	association_category
+Oxazolidinone-resistant 23S rRNA mutation,O23S	4	15	0.25	0.9375	19	0.59375	0.6875	Shared	Transit-associated
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRSA	6	16	0.375	1	22	0.6875	0.625	Shared	Transit-associated
+Tetracycline-resistant 16S ribosomal subunit protein,TET16S	5	15	0.3125	0.9375	20	0.625	0.625	Shared	Transit-associated
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRS	2	11	0.125	0.6875	13	0.40625	0.5625	Shared	Transit-associated
+Fluoroquinolone-resistant DNA topoisomerases,GYRA	6	14	0.375	0.875	20	0.625	0.5	Shared	Transit-associated
+Lead P-type ATPase transporter,PBRD	0	5	0	0.3125	5	0.15625	0.3125	Transit-specific	Transit-specific
+Penicillin binding protein regulator,BLAI	0	5	0	0.3125	5	0.15625	0.3125	Transit-specific	Transit-specific
+23S rRNA methyltransferases,ERMX	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+Lead P-type ATPase transporter,PBRA	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+Multi-metal RND efflux pumps,CZCP	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+Multi-metal RND efflux regulator,CZCD	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+Penicillin binding protein regulator,BLAR	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+Phenicol resistance MFS efflux pumps,CMX	0	4	0	0.25	4	0.125	0.25	Transit-specific	Transit-specific
+23S rRNA methyltransferases,ERM	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Drug and biocide MFS efflux regulator,QACR	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Drug and biocide RND efflux pumps,ACRC	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Fusidic acid-resistant mutation,FUSA	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Lead P-type ATPase transporter,PBRB	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Multi-metal RND efflux pumps,CZCE	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
+Zinc resistance protein,ZNEB	0	3	0	0.1875	3	0.09375	0.1875	Transit-specific	Transit-specific
