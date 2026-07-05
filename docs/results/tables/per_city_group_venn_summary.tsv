@@ -1,0 +1,17 @@
+city	sewage_total	transit_total	shared	sewage_only	transit_only
+Barcelona	54	13	8	46	5
+Berlin	68	25	9	59	16
+Bogota	182	23	12	170	11
+Hanoi	213	66	52	161	14
+Hong_Kong	237	33	16	221	17
+Ilorin	65	48	23	42	25
+Kuala_Lumpur	174	71	48	126	23
+Lisbon	104	25	17	87	8
+Oslo	48	16	9	39	7
+Porto	89	17	15	74	2
+Rio_de_Janeiro	64	38	15	49	23
+Santiago	77	11	6	71	5
+Singapore	237	14	9	228	5
+Sofia	58	33	17	41	16
+Taipei	203	30	15	188	15
+Vienna	90	35	20	70	15
