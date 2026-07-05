@@ -19,9 +19,6 @@ thesis. The script:
 
 This script does not download reads. It only creates the matched-city and run
 selection tables.
-
-Author: Bikram Dutta
-Project: Comparative metagenomic profiling of urban resistomes in sewage and transit
 """
 
 from __future__ import annotations
