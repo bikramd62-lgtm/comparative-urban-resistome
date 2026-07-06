@@ -30,8 +30,12 @@
 # 1. User-adjustable settings
 # ------------------------------------------------------------
 
-min_city_prevalence <- 2
+prevalence_threshold <- 0.10
 expected_number_of_cities <- 16
+
+min_city_prevalence <- ceiling(
+  prevalence_threshold * expected_number_of_cities
+)
 
 input_dir <- file.path(
   "data",
@@ -68,6 +72,23 @@ transit_class_file <- file.path(
   "transit_class_binary_matrix.tsv"
 )
 
+message(
+  "\nPrevalence threshold: ",
+  prevalence_threshold * 100,
+  "%"
+)
+
+message(
+  "Expected number of matched cities per environment: ",
+  expected_number_of_cities
+)
+
+message(
+  "Minimum city prevalence used for filtering: ",
+  min_city_prevalence,
+  " cities"
+)
+
 # ------------------------------------------------------------
 # 2. Create output directory
 # ------------------------------------------------------------
@@ -80,7 +101,31 @@ if (!dir.exists(output_dir)) {
 }
 
 # ------------------------------------------------------------
-# 3. Helper function: read unfiltered binary matrix
+# 3. Check required input files
+# ------------------------------------------------------------
+
+required_input_files <- c(
+  sewage_group_file,
+  transit_group_file,
+  sewage_class_file,
+  transit_class_file
+)
+
+missing_input_files <- required_input_files[
+  !file.exists(required_input_files)
+]
+
+if (length(missing_input_files) > 0) {
+  stop(
+    paste0(
+      "The following required input files are missing:\n",
+      paste(missing_input_files, collapse = "\n")
+    )
+  )
+}
+
+# ------------------------------------------------------------
+# 4. Helper function: read unfiltered binary matrix
 # ------------------------------------------------------------
 
 read_binary_matrix <- function(file_path, matrix_name) {
@@ -134,7 +179,11 @@ read_binary_matrix <- function(file_path, matrix_name) {
     )
   }
 
-  value_df <- raw_df[, -1, drop = FALSE]
+  value_df <- raw_df[
+    ,
+    -1,
+    drop = FALSE
+  ]
 
   value_df[] <- lapply(
     value_df,
@@ -145,7 +194,10 @@ read_binary_matrix <- function(file_path, matrix_name) {
     }
   )
 
-  value_matrix <- as.matrix(value_df)
+  value_matrix <- as.matrix(
+    value_df
+  )
+
   rownames(value_matrix) <- feature_ids
 
   if (any(is.na(value_matrix))) {
@@ -191,10 +243,15 @@ read_binary_matrix <- function(file_path, matrix_name) {
     feature_ids_collapsed <- collapsed_df$Feature
 
     value_matrix <- as.matrix(
-      collapsed_df[, -1, drop = FALSE]
+      collapsed_df[
+        ,
+        -1,
+        drop = FALSE
+      ]
     )
 
     rownames(value_matrix) <- feature_ids_collapsed
+
     storage.mode(value_matrix) <- "numeric"
   }
 
@@ -224,14 +281,16 @@ read_binary_matrix <- function(file_path, matrix_name) {
 }
 
 # ------------------------------------------------------------
-# 4. Helper function: standardise city names
+# 5. Helper function: standardise city names
 # ------------------------------------------------------------
 
 standardise_city_names <- function(city_names) {
 
-  city_names <- trimws(city_names)
+  city_names <- trimws(
+    city_names
+  )
 
-  # Remove environment suffixes if they accidentally exist
+  # Remove environment suffixes if they accidentally exist.
   city_names <- sub(
     "_Sewage$",
     "",
@@ -248,7 +307,7 @@ standardise_city_names <- function(city_names) {
 }
 
 # ------------------------------------------------------------
-# 5. Helper function: align matched cities
+# 6. Helper function: align matched cities
 # ------------------------------------------------------------
 
 align_matched_cities <- function(
@@ -265,8 +324,13 @@ align_matched_cities <- function(
     colnames(transit_matrix)
   )
 
-  sewage_cities <- colnames(sewage_matrix)
-  transit_cities <- colnames(transit_matrix)
+  sewage_cities <- colnames(
+    sewage_matrix
+  )
+
+  transit_cities <- colnames(
+    transit_matrix
+  )
 
   matched_cities <- intersect(
     sewage_cities,
@@ -352,7 +416,7 @@ align_matched_cities <- function(
 }
 
 # ------------------------------------------------------------
-# 6. Helper function: build corrected combined matrix
+# 7. Helper function: build corrected combined matrix
 # ------------------------------------------------------------
 
 build_corrected_rq1_matrix <- function(
@@ -396,7 +460,7 @@ build_corrected_rq1_matrix <- function(
   matched_cities <- aligned$cities
 
   # ----------------------------------------------------------
-  # 6.1 Determine feature prevalence in each environment
+  # 7.1 Determine feature prevalence in each environment
   # ----------------------------------------------------------
 
   all_features <- union(
@@ -494,9 +558,9 @@ build_corrected_rq1_matrix <- function(
   )
 
   # ----------------------------------------------------------
-  # 6.2 Rebuild final matrix from unfiltered data
+  # 7.2 Rebuild final matrix from unfiltered data
   #
-  # This is the important correction:
+  # This is the main correction:
   # Do not combine already-filtered matrices.
   # Return to the unfiltered sewage_full and transit_full matrices.
   # ----------------------------------------------------------
@@ -528,7 +592,8 @@ build_corrected_rq1_matrix <- function(
     transit_retained
   )
 
-  # Reorder profiles by city: City_Sewage, City_Transit
+  # Reorder profiles by city:
+  # City_Sewage, City_Transit
   ordered_profiles <- as.vector(
     rbind(
       paste0(matched_cities, "_Sewage"),
@@ -547,7 +612,7 @@ build_corrected_rq1_matrix <- function(
   )
 
   # ----------------------------------------------------------
-  # 6.3 Feature classification after corrected filtering
+  # 7.3 Feature classification after corrected filtering
   # ----------------------------------------------------------
 
   corrected_sewage_prevalence <- rowSums(
@@ -590,6 +655,7 @@ build_corrected_rq1_matrix <- function(
 
   overlap_summary <- data.frame(
     Level = level_name,
+    Prevalence_threshold = prevalence_threshold,
     Min_city_prevalence = min_city_prevalence,
     Matched_cities = length(matched_cities),
     Total_unfiltered_feature_union = length(all_features),
@@ -613,7 +679,7 @@ build_corrected_rq1_matrix <- function(
   )
 
   # ----------------------------------------------------------
-  # 6.4 Metadata table
+  # 7.4 Metadata table
   # ----------------------------------------------------------
 
   metadata <- data.frame(
@@ -658,7 +724,7 @@ build_corrected_rq1_matrix <- function(
   }
 
   # ----------------------------------------------------------
-  # 6.5 Write outputs
+  # 7.5 Write outputs
   # ----------------------------------------------------------
 
   features_by_profile_output <- file.path(
@@ -851,7 +917,7 @@ build_corrected_rq1_matrix <- function(
 }
 
 # ------------------------------------------------------------
-# 7. Build ARG Group matrix
+# 8. Build ARG Group matrix
 # ------------------------------------------------------------
 
 group_results <- build_corrected_rq1_matrix(
@@ -862,47 +928,24 @@ group_results <- build_corrected_rq1_matrix(
 )
 
 # ------------------------------------------------------------
-# 8. Build Resistance Class matrix if files are available
+# 9. Build Resistance Class matrix
 # ------------------------------------------------------------
 
-class_files_available <- file.exists(sewage_class_file) &&
-  file.exists(transit_class_file)
-
-if (class_files_available) {
-
-  class_results <- build_corrected_rq1_matrix(
-    sewage_file = sewage_class_file,
-    transit_file = transit_class_file,
-    level_name = "Resistance Class",
-    output_prefix = "rq1_class"
-  )
-
-} else {
-
-  warning(
-    paste0(
-      "Resistance Class input files were not found. ",
-      "Skipping class-level matrix construction.\n",
-      "Expected files:\n",
-      sewage_class_file,
-      "\n",
-      transit_class_file
-    )
-  )
-}
+class_results <- build_corrected_rq1_matrix(
+  sewage_file = sewage_class_file,
+  transit_file = transit_class_file,
+  level_name = "Resistance Class",
+  output_prefix = "rq1_class"
+)
 
 # ------------------------------------------------------------
-# 9. Save combined run summary
+# 10. Save combined run summary
 # ------------------------------------------------------------
 
-run_summary <- group_results$overlap_summary
-
-if (exists("class_results")) {
-  run_summary <- rbind(
-    run_summary,
-    class_results$overlap_summary
-  )
-}
+run_summary <- rbind(
+  group_results$overlap_summary,
+  class_results$overlap_summary
+)
 
 run_summary_output <- file.path(
   output_dir,
