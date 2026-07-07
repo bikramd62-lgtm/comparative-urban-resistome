@@ -1,65 +1,86 @@
 # ============================================================
-# 02_rq2_prevalence_difference_analysis.R
+# fig_rq2_group_prevalence_difference_barplot.R
 #
 # Purpose:
-# Calculate descriptive prevalence differences between sewage
-# and transit resistome features for RQ2.
+# Generate the RQ2 ARG Group descriptive prevalence-difference
+# barplot used in the thesis.
 #
-# This script is descriptive. It does not perform formal
-# statistical testing.
-#
-# Prevalence definition:
-# Prevalence is calculated as the proportion of matched cities
-# in which a feature is detected in each environment.
+# This figure is descriptive. It does not show formal
+# statistical significance
 #
 # Prevalence difference:
 # Transit prevalence - Sewage prevalence
 #
 # Interpretation:
-# - Positive value: higher city-level prevalence in transit
-# - Negative value: higher city-level prevalence in sewage
-# - Zero value: equal city-level prevalence
+# - Positive bars: higher city-level prevalence in transit
+# - Negative bars: higher city-level prevalence in sewage
 #
 # Input:
-# results/rq2/environment_specific/rq2_group_environment_specific_feature_classification.tsv
-# results/rq2/environment_specific/rq2_class_environment_specific_feature_classification.tsv
+# results/rq2/prevalence_difference/rq2_group_prevalence_comparison.tsv
 #
 # Output:
-# results/rq2/prevalence_difference/
+# results/rq2/figures/rq2_group_prevalence_difference_barplot.png
+# results/rq2/figures/rq2_group_prevalence_difference_barplot.pdf
+# results/rq2/figures/rq2_group_prevalence_difference_barplot_plotdata.tsv
 # ============================================================
 
 # ------------------------------------------------------------
-# 1. User-adjustable settings
+# 1. Required packages
 # ------------------------------------------------------------
 
-input_dir <- file.path(
+required_packages <- c(
+  "ggplot2",
+  "dplyr",
+  "stringr"
+)
+
+missing_packages <- required_packages[
+  !vapply(
+    required_packages,
+    requireNamespace,
+    FUN.VALUE = logical(1),
+    quietly = TRUE
+  )
+]
+
+if (length(missing_packages) > 0) {
+  stop(
+    paste0(
+      "The following required R packages are missing:\n",
+      paste(missing_packages, collapse = ", "),
+      "\nInstall them before running this script."
+    )
+  )
+}
+
+library(ggplot2)
+library(dplyr)
+library(stringr)
+
+# ------------------------------------------------------------
+# 2. User-adjustable settings
+# ------------------------------------------------------------
+
+input_file <- file.path(
   "results",
   "rq2",
-  "environment_specific"
+  "prevalence_difference",
+  "rq2_group_prevalence_comparison.tsv"
 )
 
 output_dir <- file.path(
   "results",
   "rq2",
-  "prevalence_difference"
+  "figures"
 )
 
-expected_number_of_cities <- 16
-
-top_n_features <- 30
-
-group_input_file <- file.path(
-  input_dir,
-  "rq2_group_environment_specific_feature_classification.tsv"
-)
-
-class_input_file <- file.path(
-  input_dir,
-  "rq2_class_environment_specific_feature_classification.tsv"
-)
+# The thesis figure shows the 15 ARG Groups with the strongest
+# descriptive difference toward sewage and the 15 strongest
+# descriptive difference toward transit.
+top_n_per_direction <- 15
 
 # ------------------------------------------------------------
-# 2. Create output directory
+# 3. Create output directory
 # ------------------------------------------------------------
 
 if (!dir.exists(output_dir)) {
@@ -70,564 +91,431 @@ if (!dir.exists(output_dir)) {
 }
 
 # ------------------------------------------------------------
-# 3. Check required input files
+# 4. Check input file
 # ------------------------------------------------------------
 
-required_input_files <- c(
-  group_input_file,
-  class_input_file
-)
-
-missing_input_files <- required_input_files[
-  !file.exists(required_input_files)
-]
-
-if (length(missing_input_files) > 0) {
+if (!file.exists(input_file)) {
   stop(
     paste0(
-      "The following required input files are missing:\n",
-      paste(missing_input_files, collapse = "\n"),
-      "\nRun 01_rq2_environment_specific_feature_analysis.R before running this script."
+      "Input file not found:\n",
+      input_file,
+      "\nRun 02_rq2_prevalence_difference_analysis.R before generating this figure."
     )
   )
 }
 
 # ------------------------------------------------------------
-# 4. Helper function: read RQ2 feature-classification table
+# 5. Read prevalence-comparison table
 # ------------------------------------------------------------
 
-read_feature_classification <- function(file_path, level_name) {
-
-  message(
-    "\nReading ",
-    level_name,
-    " feature-classification table:\n",
-    file_path
-  )
-
-  feature_table <- read.delim(
-    file = file_path,
-    header = TRUE,
-    sep = "\t",
-    check.names = FALSE,
-    stringsAsFactors = FALSE,
-    quote = "",
-    comment.char = ""
-  )
-
-  required_columns <- c(
-    "Feature",
-    "Feature_label",
-    "Level",
-    "Sewage_city_count",
-    "Transit_city_count",
-    "Sewage_prevalence",
-    "Transit_prevalence",
-    "Present_in_sewage",
-    "Present_in_transit",
-    "Strict_environment_classification"
-  )
-
-  missing_columns <- setdiff(
-    required_columns,
-    colnames(feature_table)
-  )
-
-  if (length(missing_columns) > 0) {
-    stop(
-      paste0(
-        level_name,
-        ": the following required columns are missing:\n",
-        paste(missing_columns, collapse = ", ")
-      )
-    )
-  }
-
-  numeric_columns <- c(
-    "Sewage_city_count",
-    "Transit_city_count",
-    "Sewage_prevalence",
-    "Transit_prevalence"
-  )
-
-  for (column_name in numeric_columns) {
-    feature_table[[column_name]] <- suppressWarnings(
-      as.numeric(
-        feature_table[[column_name]]
-      )
-    )
-
-    if (any(is.na(feature_table[[column_name]]))) {
-      stop(
-        paste0(
-          level_name,
-          ": column contains missing or non-numeric values: ",
-          column_name
-        )
-      )
-    }
-  }
-
-  if (any(feature_table$Sewage_prevalence < 0) ||
-      any(feature_table$Sewage_prevalence > 1) ||
-      any(feature_table$Transit_prevalence < 0) ||
-      any(feature_table$Transit_prevalence > 1)) {
-    stop(
-      paste0(
-        level_name,
-        ": prevalence values must be between 0 and 1."
-      )
-    )
-  }
-
-  message(
-    level_name,
-    ": ",
-    nrow(feature_table),
-    " features"
-  )
-
-  return(feature_table)
-}
-
-# ------------------------------------------------------------
-# 5. Helper function: classify prevalence-difference direction
-# ------------------------------------------------------------
-
-classify_prevalence_direction <- function(prevalence_difference) {
-
-  direction <- ifelse(
-    prevalence_difference > 0,
-    "Higher_in_transit",
-    ifelse(
-      prevalence_difference < 0,
-      "Higher_in_sewage",
-      "Equal_prevalence"
-    )
-  )
-
-  return(direction)
-}
-
-# ------------------------------------------------------------
-# 6. Helper function: label prevalence direction for figures
-# ------------------------------------------------------------
-
-make_direction_label <- function(prevalence_direction) {
-
-  label <- ifelse(
-    prevalence_direction == "Higher_in_transit",
-    "Higher in transit",
-    ifelse(
-      prevalence_direction == "Higher_in_sewage",
-      "Higher in sewage",
-      "Equal prevalence"
-    )
-  )
-
-  return(label)
-}
-
-# ------------------------------------------------------------
-# 7. Main function: prevalence-difference analysis
-# ------------------------------------------------------------
-
-run_prevalence_difference_analysis <- function(
-  input_file,
-  level_name,
-  output_prefix
-) {
-
-  message(
-    "\n============================================================"
-  )
-
-  message(
-    "Running RQ2 descriptive prevalence-difference analysis: ",
-    level_name
-  )
-
-  message(
-    "============================================================"
-  )
-
-  feature_table <- read_feature_classification(
-    file_path = input_file,
-    level_name = level_name
-  )
-
-  # ----------------------------------------------------------
-  # 7.1 Calculate prevalence differences
-  # ----------------------------------------------------------
-
-  feature_table$Prevalence_difference <- feature_table$Transit_prevalence -
-    feature_table$Sewage_prevalence
-
-  feature_table$Absolute_prevalence_difference <- abs(
-    feature_table$Prevalence_difference
-  )
-
-  feature_table$Prevalence_direction <- classify_prevalence_direction(
-    feature_table$Prevalence_difference
-  )
-
-  feature_table$Prevalence_direction_label <- make_direction_label(
-    feature_table$Prevalence_direction
-  )
-
-  feature_table$Maximum_environment_prevalence <- pmax(
-    feature_table$Sewage_prevalence,
-    feature_table$Transit_prevalence
-  )
-
-  feature_table$Minimum_environment_prevalence <- pmin(
-    feature_table$Sewage_prevalence,
-    feature_table$Transit_prevalence
-  )
-
-  feature_table$Both_environment_prevalence_sum <- feature_table$Sewage_prevalence +
-    feature_table$Transit_prevalence
-
-  # ----------------------------------------------------------
-  # 7.2 Add readable percentage columns
-  # ----------------------------------------------------------
-
-  feature_table$Sewage_prevalence_percent <- feature_table$Sewage_prevalence * 100
-
-  feature_table$Transit_prevalence_percent <- feature_table$Transit_prevalence * 100
-
-  feature_table$Prevalence_difference_percent_points <- feature_table$Prevalence_difference * 100
-
-  feature_table$Absolute_prevalence_difference_percent_points <-
-    feature_table$Absolute_prevalence_difference * 100
-
-  # ----------------------------------------------------------
-  # 7.3 Reorder output columns
-  # ----------------------------------------------------------
-
-  output_columns <- c(
-    "Feature",
-    "Feature_label",
-    "Level",
-    "Sewage_city_count",
-    "Transit_city_count",
-    "Sewage_prevalence",
-    "Transit_prevalence",
-    "Sewage_prevalence_percent",
-    "Transit_prevalence_percent",
-    "Prevalence_difference",
-    "Prevalence_difference_percent_points",
-    "Absolute_prevalence_difference",
-    "Absolute_prevalence_difference_percent_points",
-    "Prevalence_direction",
-    "Prevalence_direction_label",
-    "Maximum_environment_prevalence",
-    "Minimum_environment_prevalence",
-    "Both_environment_prevalence_sum",
-    "Present_in_sewage",
-    "Present_in_transit",
-    "Strict_environment_classification"
-  )
-
-  feature_table <- feature_table[
-    ,
-    output_columns,
-    drop = FALSE
-  ]
-
-  feature_table <- feature_table[
-    order(
-      -feature_table$Absolute_prevalence_difference,
-      feature_table$Prevalence_direction,
-      -feature_table$Maximum_environment_prevalence,
-      feature_table$Feature_label,
-      feature_table$Feature
-    ),
-    ,
-    drop = FALSE
-  ]
-
-  # ----------------------------------------------------------
-  # 7.4 Create direction-specific tables
-  # ----------------------------------------------------------
-
-  higher_in_sewage <- feature_table[
-    feature_table$Prevalence_direction == "Higher_in_sewage",
-    ,
-    drop = FALSE
-  ]
-
-  higher_in_transit <- feature_table[
-    feature_table$Prevalence_direction == "Higher_in_transit",
-    ,
-    drop = FALSE
-  ]
-
-  equal_prevalence <- feature_table[
-    feature_table$Prevalence_direction == "Equal_prevalence",
-    ,
-    drop = FALSE
-  ]
-
-  top_prevalence_difference <- feature_table[
-    order(
-      -feature_table$Absolute_prevalence_difference,
-      -feature_table$Maximum_environment_prevalence,
-      feature_table$Feature_label,
-      feature_table$Feature
-    ),
-    ,
-    drop = FALSE
-  ]
-
-  if (nrow(top_prevalence_difference) > top_n_features) {
-    top_prevalence_difference <- top_prevalence_difference[
-      seq_len(top_n_features),
-      ,
-      drop = FALSE
-    ]
-  }
-
-  # ----------------------------------------------------------
-  # 7.5 Summary table
-  # ----------------------------------------------------------
-
-  summary_df <- data.frame(
-    Level = level_name,
-    Total_features = nrow(feature_table),
-    Higher_in_sewage_features = nrow(higher_in_sewage),
-    Higher_in_transit_features = nrow(higher_in_transit),
-    Equal_prevalence_features = nrow(equal_prevalence),
-    Strict_shared_features = sum(
-      feature_table$Strict_environment_classification == "Shared"
-    ),
-    Strict_sewage_only_features = sum(
-      feature_table$Strict_environment_classification == "Sewage_only"
-    ),
-    Strict_transit_only_features = sum(
-      feature_table$Strict_environment_classification == "Transit_only"
-    ),
-    Maximum_absolute_prevalence_difference =
-      max(feature_table$Absolute_prevalence_difference),
-    Median_absolute_prevalence_difference =
-      median(feature_table$Absolute_prevalence_difference),
-    Mean_absolute_prevalence_difference =
-      mean(feature_table$Absolute_prevalence_difference),
-    stringsAsFactors = FALSE
-  )
-
-  message(
-    "\nDescriptive prevalence-difference summary for ",
-    level_name,
-    ":"
-  )
-
-  print(
-    summary_df
-  )
-
-  # ----------------------------------------------------------
-  # 7.6 Write outputs
-  # ----------------------------------------------------------
-
-  prevalence_comparison_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_prevalence_comparison.tsv"
-    )
-  )
-
-  summary_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_prevalence_difference_summary.tsv"
-    )
-  )
-
-  higher_in_sewage_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_higher_prevalence_in_sewage.tsv"
-    )
-  )
-
-  higher_in_transit_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_higher_prevalence_in_transit.tsv"
-    )
-  )
-
-  equal_prevalence_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_equal_prevalence_features.tsv"
-    )
-  )
-
-  top_prevalence_difference_output <- file.path(
-    output_dir,
-    paste0(
-      output_prefix,
-      "_top",
-      top_n_features,
-      "_absolute_prevalence_difference_features.tsv"
-    )
-  )
-
-  write.table(
-    feature_table,
-    file = prevalence_comparison_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  write.table(
-    summary_df,
-    file = summary_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  write.table(
-    higher_in_sewage,
-    file = higher_in_sewage_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  write.table(
-    higher_in_transit,
-    file = higher_in_transit_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  write.table(
-    equal_prevalence,
-    file = equal_prevalence_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  write.table(
-    top_prevalence_difference,
-    file = top_prevalence_difference_output,
-    sep = "\t",
-    quote = FALSE,
-    row.names = FALSE
-  )
-
-  message(
-    "\nFiles written for ",
-    level_name,
-    ":"
-  )
-
-  message(prevalence_comparison_output)
-  message(summary_output)
-  message(higher_in_sewage_output)
-  message(higher_in_transit_output)
-  message(equal_prevalence_output)
-  message(top_prevalence_difference_output)
-
-  return(
-    list(
-      prevalence_comparison = feature_table,
-      summary = summary_df,
-      higher_in_sewage = higher_in_sewage,
-      higher_in_transit = higher_in_transit,
-      equal_prevalence = equal_prevalence,
-      top_prevalence_difference = top_prevalence_difference
-    )
-  )
-}
-
-# ------------------------------------------------------------
-# 8. Run ARG Group analysis
-# ------------------------------------------------------------
-
-group_results <- run_prevalence_difference_analysis(
-  input_file = group_input_file,
-  level_name = "ARG Group",
-  output_prefix = "rq2_group"
-)
-
-# ------------------------------------------------------------
-# 9. Run Resistance Class analysis
-# ------------------------------------------------------------
-
-class_results <- run_prevalence_difference_analysis(
-  input_file = class_input_file,
-  level_name = "Resistance Class",
-  output_prefix = "rq2_class"
-)
-
-# ------------------------------------------------------------
-# 10. Save combined summaries
-# ------------------------------------------------------------
-
-combined_summary <- rbind(
-  group_results$summary,
-  class_results$summary
-)
-
-combined_prevalence_comparison <- rbind(
-  group_results$prevalence_comparison,
-  class_results$prevalence_comparison
-)
-
-combined_summary_output <- file.path(
-  output_dir,
-  "rq2_combined_prevalence_difference_summary.tsv"
-)
-
-combined_prevalence_comparison_output <- file.path(
-  output_dir,
-  "rq2_combined_prevalence_comparison.tsv"
-)
-
-write.table(
-  combined_summary,
-  file = combined_summary_output,
+prevalence_table <- read.delim(
+  file = input_file,
+  header = TRUE,
   sep = "\t",
-  quote = FALSE,
-  row.names = FALSE
+  check.names = FALSE,
+  stringsAsFactors = FALSE,
+  quote = "",
+  comment.char = ""
+)
+
+required_columns <- c(
+  "Feature",
+  "Feature_label",
+  "Sewage_prevalence",
+  "Transit_prevalence",
+  "Prevalence_difference",
+  "Absolute_prevalence_difference",
+  "Prevalence_direction"
+)
+
+missing_columns <- setdiff(
+  required_columns,
+  colnames(prevalence_table)
+)
+
+if (length(missing_columns) > 0) {
+  stop(
+    paste0(
+      "The following required columns are missing from the input file:\n",
+      paste(missing_columns, collapse = ", ")
+    )
+  )
+}
+
+numeric_columns <- c(
+  "Sewage_prevalence",
+  "Transit_prevalence",
+  "Prevalence_difference",
+  "Absolute_prevalence_difference"
+)
+
+for (column_name in numeric_columns) {
+  prevalence_table[[column_name]] <- suppressWarnings(
+    as.numeric(
+      prevalence_table[[column_name]]
+    )
+  )
+
+  if (any(is.na(prevalence_table[[column_name]]))) {
+    stop(
+      paste0(
+        "Column contains missing or non-numeric values: ",
+        column_name
+      )
+    )
+  }
+}
+
+# ------------------------------------------------------------
+# 6. Prepare ARG Group labels
+# ------------------------------------------------------------
+
+prevalence_table <- prevalence_table %>%
+  mutate(
+    Feature_label = ifelse(
+      is.na(Feature_label) | Feature_label == "",
+      Feature,
+      Feature_label
+    ),
+    Feature_label = str_replace_all(
+      Feature_label,
+      "_",
+      " "
+    ),
+    Feature_label = str_squish(
+      Feature_label
+    ),
+    Feature_label = toupper(
+      Feature_label
+    )
+  )
+
+# ------------------------------------------------------------
+# 7. Select strongest prevalence differences
+# ------------------------------------------------------------
+
+higher_in_sewage <- prevalence_table %>%
+  filter(
+    Prevalence_direction == "Higher_in_sewage"
+  ) %>%
+  arrange(
+    desc(Absolute_prevalence_difference),
+    desc(Sewage_prevalence),
+    Feature_label,
+    Feature
+  ) %>%
+  slice_head(
+    n = top_n_per_direction
+  )
+
+higher_in_transit <- prevalence_table %>%
+  filter(
+    Prevalence_direction == "Higher_in_transit"
+  ) %>%
+  arrange(
+    desc(Absolute_prevalence_difference),
+    desc(Transit_prevalence),
+    Feature_label,
+    Feature
+  ) %>%
+  slice_head(
+    n = top_n_per_direction
+  )
+
+plot_data <- bind_rows(
+  higher_in_sewage,
+  higher_in_transit
+)
+
+if (nrow(plot_data) == 0) {
+  stop(
+    "No ARG Groups were selected for plotting. Check the prevalence-difference table."
+  )
+}
+
+plot_data <- plot_data %>%
+  mutate(
+    Higher_prevalence = ifelse(
+      Prevalence_difference < 0,
+      "Sewage",
+      "Transit"
+    )
+  ) %>%
+  arrange(
+    Prevalence_difference,
+    Feature_label,
+    Feature
+  )
+
+plot_data$Feature_label <- factor(
+  plot_data$Feature_label,
+  levels = unique(
+    plot_data$Feature_label
+  )
+)
+
+plot_data$Higher_prevalence <- factor(
+  plot_data$Higher_prevalence,
+  levels = c(
+    "Sewage",
+    "Transit"
+  )
+)
+
+# ------------------------------------------------------------
+# 8. Define colours and axis formatting
+# ------------------------------------------------------------
+
+bar_colours <- c(
+  "Sewage" = "#A6CEE3",
+  "Transit" = "#F6DA7B"
+)
+
+x_axis_limits <- c(
+  -1,
+  1
+)
+
+x_axis_breaks <- seq(
+  -1,
+  1,
+  by = 0.25
+)
+
+# ------------------------------------------------------------
+# 9. Generate final thesis figure
+# ------------------------------------------------------------
+
+p <- ggplot(
+  plot_data,
+  aes(
+    x = Prevalence_difference,
+    y = Feature_label,
+    fill = Higher_prevalence
+  )
+) +
+
+  geom_col(
+    width = 0.70,
+    colour = "grey35",
+    linewidth = 0.35
+  ) +
+
+  geom_vline(
+    xintercept = 0,
+    colour = "black",
+    linewidth = 0.8
+  ) +
+
+  scale_fill_manual(
+    values = bar_colours,
+    name = "Higher prevalence"
+  ) +
+
+  scale_x_continuous(
+    limits = x_axis_limits,
+    breaks = x_axis_breaks,
+    labels = function(x) {
+      sprintf(
+        "%.2f",
+        x
+      )
+    },
+    expand = expansion(
+      mult = c(
+        0.01,
+        0.01
+      )
+    )
+  ) +
+
+  labs(
+    x = "Prevalence difference (transit proportion - sewage proportion)",
+    y = "ARG Group"
+  ) +
+
+  guides(
+    fill = guide_legend(
+      title.position = "left",
+      title.hjust = 0.5,
+      nrow = 1,
+      byrow = TRUE,
+      override.aes = list(
+        colour = "grey35",
+        linewidth = 0.35
+      )
+    )
+  ) +
+
+  theme_minimal(
+    base_size = 18
+  ) +
+
+  theme(
+    panel.grid.major.y = element_blank(),
+
+    panel.grid.major.x = element_line(
+      colour = "grey84",
+      linewidth = 0.8
+    ),
+
+    panel.grid.minor = element_blank(),
+
+    panel.border = element_rect(
+      colour = "grey25",
+      fill = NA,
+      linewidth = 1.0
+    ),
+
+    axis.title.x = element_text(
+      size = 18,
+      colour = "black",
+      margin = margin(
+        t = 12
+      )
+    ),
+
+    axis.title.y = element_text(
+      size = 18,
+      colour = "black",
+      margin = margin(
+        r = 12
+      )
+    ),
+
+    axis.text.x = element_text(
+      size = 14,
+      colour = "grey20"
+    ),
+
+    axis.text.y = element_text(
+      size = 12,
+      colour = "grey20"
+    ),
+
+    axis.ticks.x = element_line(
+      colour = "grey25",
+      linewidth = 0.6
+    ),
+
+    axis.ticks.y = element_line(
+      colour = "grey25",
+      linewidth = 0.6
+    ),
+
+    axis.ticks.length = unit(
+      4,
+      "pt"
+    ),
+
+    legend.position = "top",
+
+    legend.title = element_text(
+      size = 14,
+      colour = "black"
+    ),
+
+    legend.text = element_text(
+      size = 14,
+      colour = "black"
+    ),
+
+    legend.key.size = unit(
+      0.70,
+      "cm"
+    ),
+
+    legend.spacing.x = unit(
+      0.25,
+      "cm"
+    ),
+
+    panel.background = element_rect(
+      fill = "white",
+      colour = NA
+    ),
+
+    plot.background = element_rect(
+      fill = "white",
+      colour = NA
+    ),
+
+    plot.margin = margin(
+      t = 12,
+      r = 18,
+      b = 14,
+      l = 18
+    )
+  )
+
+# ------------------------------------------------------------
+# 10. Display figure
+# ------------------------------------------------------------
+
+print(p)
+
+# ------------------------------------------------------------
+# 11. Save figure and plot data
+# ------------------------------------------------------------
+
+png_output <- file.path(
+  output_dir,
+  "rq2_group_prevalence_difference_barplot.png"
+)
+
+pdf_output <- file.path(
+  output_dir,
+  "rq2_group_prevalence_difference_barplot.pdf"
+)
+
+plot_data_output <- file.path(
+  output_dir,
+  "rq2_group_prevalence_difference_barplot_plotdata.tsv"
+)
+
+ggsave(
+  filename = png_output,
+  plot = p,
+  width = 12.2,
+  height = 9.4,
+  units = "in",
+  dpi = 600,
+  bg = "white"
+)
+
+ggsave(
+  filename = pdf_output,
+  plot = p,
+  width = 12.2,
+  height = 9.4,
+  units = "in",
+  bg = "white"
 )
 
 write.table(
-  combined_prevalence_comparison,
-  file = combined_prevalence_comparison_output,
+  plot_data,
+  file = plot_data_output,
   sep = "\t",
   quote = FALSE,
   row.names = FALSE
 )
 
 message(
-  "\n============================================================"
+  "\nFigure saved:"
 )
 
 message(
-  "RQ2 descriptive prevalence-difference analysis completed."
+  png_output
 )
 
 message(
-  "Combined outputs:"
+  pdf_output
 )
 
-message(combined_summary_output)
-message(combined_prevalence_comparison_output)
+message(
+  "\nPlot data saved:"
+)
 
 message(
-  "============================================================"
+  plot_data_output
 )
