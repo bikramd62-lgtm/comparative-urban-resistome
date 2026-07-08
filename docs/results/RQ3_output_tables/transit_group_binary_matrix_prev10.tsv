@@ -1,0 +1,120 @@
+feature	Barcelona	Berlin	Bogota	Hanoi	Hong_Kong	Ilorin	Kuala_Lumpur	Lisbon	Oslo	Porto	Rio_de_Janeiro	Santiago	Singapore	Sofia	Taipei	Vienna
+23S rRNA methyltransferases,ERM	1	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0
+23S rRNA methyltransferases,ERMA	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0
+23S rRNA methyltransferases,ERMX	0	1	0	0	0	0	0	0	0	0	0	0	0	1	1	1
+Acetate resistance protein,ICLR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Acid resistance protein,GADA	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Acid resistance regulator,GADE	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Aminocoumarin-resistant DNA topoisomerases,PARE	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Aminoglycoside N-acetyltransferases,AAC3	0	0	0	1	1	0	0	0	0	0	0	0	0	1	0	0
+Aminoglycoside N-acetyltransferases,AAC6-PRIME	0	0	0	0	0	1	1	0	0	0	1	0	0	0	0	0
+Aminoglycoside O-nucleotidyltransferases,ANT3-DPRIME	0	0	0	0	0	1	1	0	0	0	1	0	0	1	0	0
+Aminoglycoside O-phosphotransferases,APH3-DPRIME	0	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0
+Aminoglycoside O-phosphotransferases,APH3-PRIME	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Aminoglycoside O-phosphotransferases,APH6	0	0	0	1	1	1	0	0	0	0	0	0	0	0	0	0
+Aminoglycoside-resistant 16S ribosomal subunit protein,A16S	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Aminoglycoside-resistant 16S ribosomal subunit protein,RPSL	0	0	1	1	0	1	1	1	0	1	1	1	0	0	0	0
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRS	1	1	1	1	1	1	0	0	1	0	1	0	1	1	0	1
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRSA	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRSC	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	1
+Aminoglycoside-resistant 16S ribosomal subunit protein,RRSH	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+Arsenic resistance protein,PSTB	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0
+Arsenic resistance protein,PSTC	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	1
+Biocide and metal ABC efflux pumps,FETB	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Biocide and metal resistance protein,YCHH	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1
+Biocide and metal resistance protein,YIEF	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Cationic peptide-resistant 16S ribosomal subunit protein,CAP16S	0	1	1	1	1	1	1	1	0	1	1	1	1	1	0	1
+Class A betalactamases,CTX	1	0	1	1	0	0	0	0	0	0	1	0	0	0	0	0
+Class D betalactamases,OXA	0	0	0	1	1	1	1	1	0	0	1	0	0	1	1	1
+Colistin phosphoethanolamine transferase,ICR	0	0	0	0	1	0	0	1	0	0	0	0	1	0	0	0
+Colistin-resistant mutant,PMRAR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Copper resistance protein,COPA	0	0	0	0	0	1	1	0	0	0	0	0	0	0	1	0
+Copper resistance protein,COPC	0	0	1	0	1	1	0	0	0	0	1	0	0	1	1	1
+Copper resistance protein,COPG	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0
+Copper resistance protein,COPM	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0
+Copper resistance protein,PCOC	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0
+Copper resistance protein,TCRA	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+Copper resistance regulator,COPR	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+Dihydrofolate reductase,DFRA	0	0	0	1	0	1	0	1	0	0	1	0	0	0	0	0
+Dihydrofolate reductase,DHFR	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0
+Drug and biocide MFS efflux pumps,EMRD	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide MFS efflux regulator,QACR	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+Drug and biocide RND efflux pumps,ACRB	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux pumps,ACRC	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	1
+Drug and biocide RND efflux pumps,ARMR	0	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux pumps,MDTP	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux regulator,ACRR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux regulator,ACRS	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux regulator,CPXAR	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux regulator,GADW	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide RND efflux regulator,MARR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Drug and biocide SMR efflux pumps,QACC	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Drug and biocide SMR efflux pumps,QACEDELTA1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+Drug and biocide SMR efflux pumps,QACF	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0
+Drug and biocide and metal RND efflux pumps,ROBA	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+EF-Tu inhibition,TUFAB	1	1	1	1	1	1	1	1	0	1	1	0	0	1	0	0
+Fluoroquinolone-resistant DNA topoisomerases,GYRA	1	1	1	1	1	1	1	0	1	1	1	1	0	1	1	1
+Fluoroquinolone-resistant DNA topoisomerases,GYRB	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0
+Fluoroquinolone-resistant DNA topoisomerases,PARC	0	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0
+Fosfomycin target mutation,PTSL	0	0	0	1	0	1	1	0	0	0	0	0	0	0	0	0
+Fosfomycin target mutation,UHPT	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1
+Fosfomycin thiol transferases,FOSA	0	1	0	1	0	1	1	0	0	0	0	0	0	0	0	0
+Fusidic acid-resistant mutation,FUSA	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0
+Lead P-type ATPase transporter,PBRA	0	0	0	0	1	0	0	0	0	0	0	0	1	1	1	0
+Lead P-type ATPase transporter,PBRB	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	1
+Lead P-type ATPase transporter,PBRD	0	0	0	0	1	0	0	0	1	0	0	0	0	1	1	1
+Lincosamide nucleotidyltransferases,LNUA	0	0	0	1	0	1	0	1	0	0	0	0	0	0	0	0
+Lipid A modification,EPTA	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+MLS resistance ABC efflux pumps,MSRD	0	1	0	0	0	1	0	0	0	1	1	0	0	0	0	0
+MLS resistance ABC efflux pumps,MSRE	0	0	0	1	0	0	0	1	0	0	1	0	0	0	0	0
+Macrolide phosphotransferases,MPHC	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Macrolide phosphotransferases,MPHE	0	0	0	1	0	0	0	1	0	0	1	0	0	0	0	0
+Macrolide-resistant 23S rRNA mutation,MLS23S	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+Mercury resistance protein,MERA	0	0	0	0	1	1	1	0	1	1	0	0	1	1	1	1
+Mercury resistance protein,MERE	1	0	0	0	1	1	1	0	1	0	1	0	1	1	1	1
+Mercury resistance protein,MERP	0	0	1	0	1	1	1	0	1	0	0	0	1	1	1	1
+Mercury resistance protein,MERT	0	0	1	1	1	1	1	0	1	0	0	0	1	1	1	1
+Mercury resistance regulator,MERD	0	0	0	1	1	1	1	0	1	0	0	0	1	1	1	1
+Mercury resistance regulator,MERR	0	0	0	1	1	1	1	0	1	0	0	0	1	1	1	1
+Mercury resistance regulator,MERR1	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+Multi-biocide resistance regulator,SOXRB	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	1
+Multi-metal ABC efflux pumps,MODC	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Multi-metal RND efflux pumps,CUSF	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Multi-metal RND efflux pumps,CZCB	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0
+Multi-metal RND efflux pumps,CZCE	0	0	0	0	1	0	1	0	0	0	0	0	0	0	1	0
+Multi-metal RND efflux pumps,CZCP	0	0	0	0	1	0	0	0	0	0	0	0	0	1	1	1
+Multi-metal RND efflux pumps,SILA	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0
+Multi-metal RND efflux pumps,SILB	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0
+Multi-metal RND efflux pumps,SILF	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0
+Multi-metal RND efflux pumps,SILP	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	0
+Multi-metal RND efflux regulator,CZCD	0	0	0	0	0	0	1	0	0	0	0	0	0	1	1	1
+Multi-metal resistance protein,CADD	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0
+Multi-metal resistance protein,DMEF	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1
+Multi-metal resistance protein,FIEF	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Multi-metal resistance protein,PITA	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Multi-metal resistance protein,YGJH	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Multi-metal resistance regulator,CADX	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0
+Mutant porin proteins,OMPFB	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Nickel ABC efflux pumps,NIKA	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Nickel ABC efflux pumps,NIKC	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Oxazolidinone-resistant 23S rRNA mutation,O23S	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1
+Penicillin binding protein regulator,BLAI	0	1	1	0	0	0	0	1	0	0	1	1	0	0	0	0
+Penicillin binding protein regulator,BLAR	0	1	1	0	0	0	0	1	0	0	1	0	0	0	0	0
+Phenicol resistance MFS efflux pumps,CMX	0	0	0	1	1	0	0	0	0	0	0	0	0	1	0	1
+Phenolic resistance protein,FABI	0	0	0	0	0	0	1	0	0	0	1	0	0	0	0	0
+Pyrazinamide-resistant mutant,RPSA	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1
+Rifampin-resistant beta-subunit of RNA polymerase RpoB,RPOB	0	1	1	1	0	1	1	1	0	0	1	0	0	1	0	0
+Sulfonamide-resistant dihydropteroate synthases,FOLP	0	1	0	1	1	1	1	0	0	0	1	0	0	0	0	0
+Sulfonamide-resistant dihydropteroate synthases,SULI	0	0	0	1	0	1	0	0	0	0	0	0	0	0	0	0
+Sulfonamide-resistant dihydropteroate synthases,SULII	0	0	0	1	0	1	0	0	0	0	1	0	0	0	0	0
+Tellurium resistance protein,TERZ	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Tetracycline resistance MFS efflux pumps,TETA	0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	1
+Tetracycline resistance MFS efflux pumps,TETK	0	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0
+Tetracycline transcriptional repressor,TETR	0	0	0	1	0	1	0	0	0	0	1	0	0	0	0	1
+Tetracycline-resistant 16S ribosomal subunit protein,TET16S	1	1	1	1	1	1	1	0	1	1	1	1	1	1	1	1
+Zinc resistance protein,ZITB	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Zinc resistance protein,ZNEB	0	0	0	0	1	0	0	0	0	0	0	0	0	1	1	0
+Zinc resistance regulator,ZNTR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+Zinc resistance regulator,ZRAR	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0
+peroxide resistance protein,SODA	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0
+peroxide resistance protein,SODB	0	0	0	0	0	1	1	1	0	0	0	0	0	0	0	1

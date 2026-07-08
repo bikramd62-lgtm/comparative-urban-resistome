@@ -1,0 +1,17 @@
+city,june_relative_humidity_percent,june_precipitation_mm_per_day,june_precipitation_mm_total,climate_period,climate_source
+Barcelona,61.9435,0.9075,27.224999999999998,2001-2020,NASA POWER monthly point data
+Berlin,65.9775,1.887,56.61,2001-2020,NASA POWER monthly point data
+Bogota,78.1425,5.404,162.12,2001-2020,NASA POWER monthly point data
+Hanoi,81.5425,6.0115,180.345,2001-2020,NASA POWER monthly point data
+Hong_Kong,85.984,9.397,281.91,2001-2020,NASA POWER monthly point data
+Ilorin,84.756,5.6485,169.455,2001-2020,NASA POWER monthly point data
+Kuala_Lumpur,86.9125,5.156,154.67999999999998,2001-2020,NASA POWER monthly point data
+Lisbon,77.2705,0.4315,12.945,2001-2020,NASA POWER monthly point data
+Oslo,77.6385,3.2,96,2001-2020,NASA POWER monthly point data
+Porto,75.804,1.0765,32.295,2001-2020,NASA POWER monthly point data
+Rio_de_Janeiro,79.809,1.638,49.14,2001-2020,NASA POWER monthly point data
+Santiago,48.7225,2.0949999999999998,62.849999999999994,2001-2020,NASA POWER monthly point data
+Singapore,83.76,5.4535,163.605,2001-2020,NASA POWER monthly point data
+Sofia,67.253,2.816,84.47999999999999,2001-2020,NASA POWER monthly point data
+Taipei,84.179,9.0145,270.435,2001-2020,NASA POWER monthly point data
+Vienna,67.1855,3.023,90.69,2001-2020,NASA POWER monthly point data
