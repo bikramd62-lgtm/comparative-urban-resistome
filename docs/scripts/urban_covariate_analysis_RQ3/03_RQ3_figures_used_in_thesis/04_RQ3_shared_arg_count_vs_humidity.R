@@ -112,8 +112,8 @@ plot_df <- rq3 %>%
 
 label_offsets <- tibble(
   city = c(
-    "Barcelona", "Berlin", "Bogota", "Hanoi", "Hong_Kong", "Ilorin",
-    "Kuala_Lumpur", "Lisbon", "Oslo", "Porto", "Rio_de_Janeiro",
+    "Barcelona", "Berlin", "Bogota", "Hanoi", "Hong Kong", "Ilorin",
+    "Kuala Lumpur", "Lisbon", "Oslo", "Porto", "Rio de Janeiro",
     "Santiago", "Singapore", "Sofia", "Taipei", "Vienna"
   ),
   dx = c(
