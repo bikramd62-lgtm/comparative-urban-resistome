@@ -1,5 +1,5 @@
 # ============================================================
-# 02_RQ3_shared_ARG_group_count_vs_temperature.R
+# 02_RQ3_shared_ARG_group_count_vs_temperature
 #
 # Figure:
 # RQ3 shared ARG-group count vs average June temperature
