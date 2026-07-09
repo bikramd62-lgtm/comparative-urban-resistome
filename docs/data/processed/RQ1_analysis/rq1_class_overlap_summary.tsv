@@ -1,0 +1,9 @@
+metric	value
+total_features_in_sewage	34
+total_features_in_transit	35
+shared_features	31
+sewage_only_features	3
+transit_only_features	4
+strict_shared_urban_core	3
+strict_sewage_core	9
+strict_transit_core	3
