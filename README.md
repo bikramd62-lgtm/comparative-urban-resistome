@@ -5,10 +5,13 @@ This repository contains code and processed analysis outputs for a Master's thes
 ## Project overview and Research questions
 
 This thesis investigates urban antimicrobial resistance patterns across two contrasting but potentially connected urban environments: wastewater systems and public-transit surfaces. The analysis is structured around three research questions:
+
 - **RQ1. Do cities share a common urban resistome across sewage and public-transit environments?**  
 This question examines the overlap in antimicrobial resistance gene profiles between matched sewage and transit datasets across the final city panel.
+
 - **RQ2. Which ARG features are more specific to sewage or public-transit environments?**  
 This question identifies environment-specific and environment-associated ARG groups and resistance classes using prevalence-based comparisons.
+
 - **RQ3. Are city-level characteristics associated with sewage–transit resistome overlap?**  
 This question explores whether climatic, demographic, geographic, socioeconomic, and sanitation-related city-level variables are associated with ARG overlap between sewage and transit environments.
 
@@ -20,25 +23,35 @@ The main workflow steps are:
 
 - Metadata parsing and matched-city selection  
 Sewage and transit metadata were parsed to identify the final matched city panel used for cross-environment comparison.
-Read quality control and trimming
+
+- Read quality control and trimming  
 Raw sequencing reads were quality-checked and trimmed using standard read preprocessing workflows.
-Human-read depletion
+
+- Human-read depletion  
 Reads were screened against a human reference genome to reduce host-associated sequence content before downstream ARG profiling.
-City-wise read pooling
-Reads were pooled at the city level within each environment to create one sewage and one transit profile per matched city.
-Subsampling
+
+- City-wise read pooling  
+Reads were pooled at the city level within each environment to create a single sewage and a single transit profile per matched city.
+
+- Subsampling  
 City-level read pools were standardized to a fixed sequencing depth to reduce technical imbalance between samples.
-ARG mapping and profiling
+
+- ARG mapping and profiling  
 Reads were mapped against MEGARes v3.00, and ARG profiles were processed using an 80% gene-fraction criterion.
-Presence/absence matrix construction
+
+- Presence/absence matrix construction  
 ARG count tables were converted into binary presence/absence matrices. A 10% prevalence filter was applied to retain recurrent features across city-environment profiles.
-RQ1 shared resistome analysis
+
+- RQ1 shared resistome analysis  
 Jaccard-based overlap, ordination, PERMANOVA, within-vs-between city similarity, and shared feature analyses were performed.
-RQ2 environment-specificity analysis
+
+- RQ2 environment-specificity analysis  
 Strict environment-exclusive features and prevalence-based sewage/transit-associated features were identified and visualized.
-RQ3 urban covariate analysis
+
+- RQ3 urban covariate analysis  
 City-level climatic, demographic, geographic, socioeconomic, and sanitation-related variables were compared against sewage–transit ARG overlap metrics.
-Sensitivity and robustness analysis
+
+- Sensitivity and robustness analysis  
 Additional analyses tested the influence of sequencing depth, ARG count imbalance, richness effects, sample number, and turnover/nestedness structure.
 
 ## Repository structure
@@ -104,12 +117,3 @@ All the tools, software, and databases used in this thesis are listed below with
 - ggrepel - 0.9.6
 - tibble - 3.3.0
 - purrr - 1.2.0
-
-## Analysis reproducibility
-
-
-## Main outputs
-
-
-## Contact
-
