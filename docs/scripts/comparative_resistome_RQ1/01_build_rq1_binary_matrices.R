@@ -2,24 +2,28 @@
 # 01_build_rq1_binary_matrices.R
 #
 # Purpose:
-# Build corrected RQ1 combined binary matrices for comparative
+# Build RQ1 combined binary matrices for comparative
 # sewage-transit resistome analysis.
 #
-# Key correction:
-# Prevalence filtering is used only to define eligible features.
-# The final combined matrix is rebuilt from the unfiltered
-# sewage and transit matrices so that genuine detections in the
-# opposite environment are preserved.
+# Important workflow note:
+# The input matrices used here are already 10% prevalence-filtered
+# matrices generated upstream after AMR profiling and binary
+# conversion.
+#
+# Therefore, this script does not perform the original prevalence
+# filtering step again. It combines the upstream-filtered sewage
+# and transit matrices, aligns matched cities, and creates final
+# city-environment profile matrices for RQ1 downstream analysis.
 #
 # Expected input orientation:
 # Rows    = ARG features
 # Columns = cities
 #
-# Example input files:
-# data/interim/rq1/unfiltered/sewage_group_binary_matrix.tsv
-# data/interim/rq1/unfiltered/transit_group_binary_matrix.tsv
-# data/interim/rq1/unfiltered/sewage_class_binary_matrix.tsv
-# data/interim/rq1/unfiltered/transit_class_binary_matrix.tsv
+# Input files:
+# docs/data/processed/RQ1_analysis/sewage_group_binary_matrix_filtered10pct.tsv
+# docs/data/processed/RQ1_analysis/transit_group_binary_matrix_prev10.tsv
+# docs/data/processed/RQ1_analysis/sewage_class_binary_matrix_filtered10pct.tsv
+# docs/data/processed/RQ1_analysis/transit_class_binary_matrix_prev10.tsv
 #
 # Main outputs:
 # results/rq1/matrices/rq1_group_combined_binary_matrix.tsv
@@ -30,18 +34,18 @@
 # 1. User-adjustable settings
 # ------------------------------------------------------------
 
-prevalence_threshold <- 0.10
+prevalence_threshold_used_upstream <- 0.10
 expected_number_of_cities <- 16
 
-min_city_prevalence <- ceiling(
-  prevalence_threshold * expected_number_of_cities
+min_city_prevalence_reference <- ceiling(
+  prevalence_threshold_used_upstream * expected_number_of_cities
 )
 
 input_dir <- file.path(
+  "docs",
   "data",
-  "interim",
-  "rq1",
-  "unfiltered"
+  "processed",
+  "RQ1_analysis"
 )
 
 output_dir <- file.path(
@@ -53,28 +57,32 @@ output_dir <- file.path(
 # ARG Group input files
 sewage_group_file <- file.path(
   input_dir,
-  "sewage_group_binary_matrix.tsv"
+  "sewage_group_binary_matrix_filtered10pct.tsv"
 )
 
 transit_group_file <- file.path(
   input_dir,
-  "transit_group_binary_matrix.tsv"
+  "transit_group_binary_matrix_prev10.tsv"
 )
 
 # Resistance Class input files
 sewage_class_file <- file.path(
   input_dir,
-  "sewage_class_binary_matrix.tsv"
+  "sewage_class_binary_matrix_filtered10pct.tsv"
 )
 
 transit_class_file <- file.path(
   input_dir,
-  "transit_class_binary_matrix.tsv"
+  "transit_class_binary_matrix_prev10.tsv"
 )
 
 message(
-  "\nPrevalence threshold: ",
-  prevalence_threshold * 100,
+  "\nInput matrices are assumed to be upstream 10% prevalence-filtered matrices."
+)
+
+message(
+  "Upstream prevalence threshold: ",
+  prevalence_threshold_used_upstream * 100,
   "%"
 )
 
@@ -84,8 +92,8 @@ message(
 )
 
 message(
-  "Minimum city prevalence used for filtering: ",
-  min_city_prevalence,
+  "Reference minimum city prevalence for 10% threshold: ",
+  min_city_prevalence_reference,
   " cities"
 )
 
@@ -125,7 +133,7 @@ if (length(missing_input_files) > 0) {
 }
 
 # ------------------------------------------------------------
-# 4. Helper function: read unfiltered binary matrix
+# 4. Helper function: read upstream-filtered binary matrix
 # ------------------------------------------------------------
 
 read_binary_matrix <- function(file_path, matrix_name) {
@@ -209,9 +217,6 @@ read_binary_matrix <- function(file_path, matrix_name) {
     )
   }
 
-  # Convert any positive value to presence.
-  # This allows the function to accept either binary matrices
-  # or count-like matrices.
   value_matrix <- ifelse(
     value_matrix > 0,
     1,
@@ -220,7 +225,6 @@ read_binary_matrix <- function(file_path, matrix_name) {
 
   storage.mode(value_matrix) <- "numeric"
 
-  # If duplicated feature rows exist, collapse them by maximum presence.
   if (any(duplicated(rownames(value_matrix)))) {
 
     message(
@@ -290,7 +294,6 @@ standardise_city_names <- function(city_names) {
     city_names
   )
 
-  # Remove environment suffixes if they accidentally exist.
   city_names <- sub(
     "_Sewage$",
     "",
@@ -416,10 +419,10 @@ align_matched_cities <- function(
 }
 
 # ------------------------------------------------------------
-# 7. Helper function: build corrected combined matrix
+# 7. Helper function: build combined RQ1 matrix
 # ------------------------------------------------------------
 
-build_corrected_rq1_matrix <- function(
+build_rq1_matrix <- function(
   sewage_file,
   transit_file,
   level_name,
@@ -431,7 +434,7 @@ build_corrected_rq1_matrix <- function(
   )
 
   message(
-    "Building corrected RQ1 matrix: ",
+    "Building RQ1 combined matrix from upstream-filtered inputs: ",
     level_name
   )
 
@@ -460,7 +463,7 @@ build_corrected_rq1_matrix <- function(
   matched_cities <- aligned$cities
 
   # ----------------------------------------------------------
-  # 7.1 Determine feature prevalence in each environment
+  # 7.1 Create union of upstream-filtered features
   # ----------------------------------------------------------
 
   all_features <- union(
@@ -510,59 +513,63 @@ build_corrected_rq1_matrix <- function(
     drop = FALSE
   ]
 
-  sewage_prevalence <- rowSums(
+  sewage_city_count <- rowSums(
     sewage_full
   )
 
-  transit_prevalence <- rowSums(
+  transit_city_count <- rowSums(
     transit_full
   )
 
-  eligible_in_sewage <- sewage_prevalence >= min_city_prevalence
-  eligible_in_transit <- transit_prevalence >= min_city_prevalence
+  meets_reference_threshold_in_sewage <- sewage_city_count >=
+    min_city_prevalence_reference
 
-  eligible_union <- eligible_in_sewage | eligible_in_transit
+  meets_reference_threshold_in_transit <- transit_city_count >=
+    min_city_prevalence_reference
 
-  retained_features <- names(
-    eligible_union
-  )[
-    eligible_union
-  ]
-
-  retained_features <- sort(
-    retained_features
-  )
+  retained_features <- all_features
 
   message(
     level_name,
-    ": total unfiltered feature union = ",
+    ": input feature union from upstream-filtered matrices = ",
     length(all_features)
   )
 
   message(
     level_name,
-    ": features passing sewage prevalence threshold = ",
-    sum(eligible_in_sewage)
+    ": features meeting reference 10% threshold in sewage = ",
+    sum(meets_reference_threshold_in_sewage)
   )
 
   message(
     level_name,
-    ": features passing transit prevalence threshold = ",
-    sum(eligible_in_transit)
+    ": features meeting reference 10% threshold in transit = ",
+    sum(meets_reference_threshold_in_transit)
   )
 
   message(
     level_name,
-    ": retained union after prevalence filtering = ",
+    ": retained feature union for RQ1 = ",
     length(retained_features)
   )
 
+  if (any(
+    (sewage_city_count > 0 & !meets_reference_threshold_in_sewage) |
+      (transit_city_count > 0 & !meets_reference_threshold_in_transit)
+  )) {
+    warning(
+      paste0(
+        level_name,
+        ": some input features are present but do not meet the reference ",
+        min_city_prevalence_reference,
+        "-city threshold in either sewage or transit. ",
+        "They are still retained because the input matrices are treated as the upstream-filtered analysis inputs."
+      )
+    )
+  }
+
   # ----------------------------------------------------------
-  # 7.2 Rebuild final matrix from unfiltered data
-  #
-  # This is the main correction:
-  # Do not combine already-filtered matrices.
-  # Return to the unfiltered sewage_full and transit_full matrices.
+  # 7.2 Build final city-environment combined matrix
   # ----------------------------------------------------------
 
   sewage_retained <- sewage_full[
@@ -592,8 +599,6 @@ build_corrected_rq1_matrix <- function(
     transit_retained
   )
 
-  # Reorder profiles by city:
-  # City_Sewage, City_Transit
   ordered_profiles <- as.vector(
     rbind(
       paste0(matched_cities, "_Sewage"),
@@ -612,28 +617,28 @@ build_corrected_rq1_matrix <- function(
   )
 
   # ----------------------------------------------------------
-  # 7.3 Feature classification after corrected filtering
+  # 7.3 Feature classification based on combined matrix
   # ----------------------------------------------------------
 
-  corrected_sewage_prevalence <- rowSums(
+  final_sewage_city_count <- rowSums(
     sewage_retained
   )
 
-  corrected_transit_prevalence <- rowSums(
+  final_transit_city_count <- rowSums(
     transit_retained
   )
 
   classification <- ifelse(
-    corrected_sewage_prevalence > 0 &
-      corrected_transit_prevalence > 0,
+    final_sewage_city_count > 0 &
+      final_transit_city_count > 0,
     "Shared",
     ifelse(
-      corrected_sewage_prevalence > 0 &
-        corrected_transit_prevalence == 0,
+      final_sewage_city_count > 0 &
+        final_transit_city_count == 0,
       "Sewage_only",
       ifelse(
-        corrected_sewage_prevalence == 0 &
-          corrected_transit_prevalence > 0,
+        final_sewage_city_count == 0 &
+          final_transit_city_count > 0,
         "Transit_only",
         "Absent"
       )
@@ -642,26 +647,30 @@ build_corrected_rq1_matrix <- function(
 
   prevalence_summary <- data.frame(
     Feature = retained_features,
-    Sewage_prevalence_unfiltered = sewage_prevalence[retained_features],
-    Transit_prevalence_unfiltered = transit_prevalence[retained_features],
-    Eligible_in_sewage = eligible_in_sewage[retained_features],
-    Eligible_in_transit = eligible_in_transit[retained_features],
-    Eligible_in_union = eligible_union[retained_features],
-    Final_sewage_prevalence = corrected_sewage_prevalence,
-    Final_transit_prevalence = corrected_transit_prevalence,
+    Sewage_city_count_input_filtered =
+      sewage_city_count[retained_features],
+    Transit_city_count_input_filtered =
+      transit_city_count[retained_features],
+    Meets_reference_10pct_in_sewage =
+      meets_reference_threshold_in_sewage[retained_features],
+    Meets_reference_10pct_in_transit =
+      meets_reference_threshold_in_transit[retained_features],
+    Final_sewage_prevalence = final_sewage_city_count,
+    Final_transit_prevalence = final_transit_city_count,
     Classification = classification,
     stringsAsFactors = FALSE
   )
 
   overlap_summary <- data.frame(
     Level = level_name,
-    Prevalence_threshold = prevalence_threshold,
-    Min_city_prevalence = min_city_prevalence,
+    Input_matrix_status = "Upstream_10pct_prevalence_filtered",
+    Upstream_prevalence_threshold = prevalence_threshold_used_upstream,
+    Reference_min_city_prevalence = min_city_prevalence_reference,
     Matched_cities = length(matched_cities),
-    Total_unfiltered_feature_union = length(all_features),
+    Input_feature_union = length(all_features),
     Retained_feature_union = length(retained_features),
-    Sewage_detected_features = sum(corrected_sewage_prevalence > 0),
-    Transit_detected_features = sum(corrected_transit_prevalence > 0),
+    Sewage_detected_features = sum(final_sewage_city_count > 0),
+    Transit_detected_features = sum(final_transit_city_count > 0),
     Shared_features = sum(classification == "Shared"),
     Sewage_only_features = sum(classification == "Sewage_only"),
     Transit_only_features = sum(classification == "Transit_only"),
@@ -671,7 +680,7 @@ build_corrected_rq1_matrix <- function(
   message(
     "\n",
     level_name,
-    " corrected overlap summary:"
+    " RQ1 overlap summary:"
   )
 
   print(
@@ -920,7 +929,7 @@ build_corrected_rq1_matrix <- function(
 # 8. Build ARG Group matrix
 # ------------------------------------------------------------
 
-group_results <- build_corrected_rq1_matrix(
+group_results <- build_rq1_matrix(
   sewage_file = sewage_group_file,
   transit_file = transit_group_file,
   level_name = "ARG Group",
@@ -931,7 +940,7 @@ group_results <- build_corrected_rq1_matrix(
 # 9. Build Resistance Class matrix
 # ------------------------------------------------------------
 
-class_results <- build_corrected_rq1_matrix(
+class_results <- build_rq1_matrix(
   sewage_file = sewage_class_file,
   transit_file = transit_class_file,
   level_name = "Resistance Class",
