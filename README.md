@@ -85,7 +85,7 @@ Additional analyses tested the influence of sequencing depth, ARG count imbalanc
 
 ## Data and privacy note
 
-Raw sequencing reads are not included in this repository due to file size and privacy considerations. The repository contains scripts, metadata, processed matrices, and derived outputs required to inspect and reproduce the downstream analysis.
+Raw sequencing reads are not included in this repository due to file size, licensing, and privacy considerations for metagenomic sequencing data. The repository also does not include raw FASTQ files, human-depleted read files, SAM/BAM alignment files, Bowtie2 index files, downloaded database files, or large intermediate outputs.
 
 ## Software requirements
 
@@ -117,3 +117,8 @@ All the tools, software, and databases used in this thesis are listed below with
 - ggrepel - 0.9.6
 - tibble - 3.3.0
 - purrr - 1.2.0
+
+## Data sources
+
+- Sewage metagenomic data: Global Sewage Surveillance project datasets (Hendriksen et al., 2019, and Munk et al., 2022)
+- Public-transit metagenomic data: MetaSUB/GeoSeeq-derived city-level data (Danko et al., 2021)
