@@ -1,10 +1,45 @@
 # Comparative Urban Resistome
 
-This repository contains code and processed analysis outputs for a Master's thesis comparing Antimicrobial Resistance gene profiles in urban sewage and public-transit metagenomes across matched global cities.
+This repository contains code and processed analysis outputs for a Master's thesis comparing Antimicrobial Resistance patterns in urban sewage and public-transit metagenomes across matched global cities.
 
-## Project overview
+## Project overview and Research questions
 
-The thesis investigates whether urban sewage and public-transit environments share a common resistome across matched cities, which antimicrobial resistance features distinguish these environments, and whether city-level characteristics are associated with sewage-transit resistome overlap.
+This thesis investigates urban antimicrobial resistance patterns across two contrasting but potentially connected urban environments: wastewater systems and public-transit surfaces. The analysis is structured around three research questions:
+- RQ1. Do cities share a common urban resistome across sewage and public-transit environments?
+This question examines the overlap in antimicrobial resistance gene profiles between matched sewage and transit datasets across the final city panel.
+- RQ2. Which ARG features are more specific to sewage or public-transit environments?
+This question identifies environment-specific and environment-associated ARG groups and resistance classes using prevalence-based comparisons.
+- RQ3. Are city-level characteristics associated with sewage–transit resistome overlap?
+This question explores whether climatic, demographic, geographic, socioeconomic, and sanitation-related city-level variables are associated with ARG overlap between sewage and transit environments.
+
+## Workflow overview
+
+The workflow combines bioinformatic preprocessing, ARG profiling, presence/absence matrix construction, statistical analysis, and figure generation.
+
+The main workflow steps are:
+
+Metadata parsing and matched-city selection
+Sewage and transit metadata were parsed to identify the final matched city panel used for cross-environment comparison.
+Read quality control and trimming
+Raw sequencing reads were quality-checked and trimmed using standard read preprocessing workflows.
+Human-read depletion
+Reads were screened against a human reference genome to reduce host-associated sequence content before downstream ARG profiling.
+City-wise read pooling
+Reads were pooled at the city level within each environment to create one sewage and one transit profile per matched city.
+Subsampling
+City-level read pools were standardized to a fixed sequencing depth to reduce technical imbalance between samples.
+ARG mapping and profiling
+Reads were mapped against MEGARes v3.00, and ARG profiles were processed using an 80% gene-fraction criterion.
+Presence/absence matrix construction
+ARG count tables were converted into binary presence/absence matrices. A 10% prevalence filter was applied to retain recurrent features across city-environment profiles.
+RQ1 shared resistome analysis
+Jaccard-based overlap, ordination, PERMANOVA, within-vs-between city similarity, and shared feature analyses were performed.
+RQ2 environment-specificity analysis
+Strict environment-exclusive features and prevalence-based sewage/transit-associated features were identified and visualized.
+RQ3 urban covariate analysis
+City-level climatic, demographic, geographic, socioeconomic, and sanitation-related variables were compared against sewage–transit ARG overlap metrics.
+Sensitivity and robustness analysis
+Additional analyses tested the influence of sequencing depth, ARG count imbalance, richness effects, sample number, and turnover/nestedness structure.
 
 ## Repository structure
 
@@ -35,11 +70,11 @@ The thesis investigates whether urban sewage and public-transit environments sha
 - `results/Sensitivity_analysis_output_tables/`: Tables generated during the sensitivity analysis.
 - `docs/`: whole Workflow documentation
 
-## Data availability
+## Data and privacy note
 
 Raw sequencing reads are not included in this repository due to file size and privacy considerations. The repository contains scripts, metadata, processed matrices, and derived outputs required to inspect and reproduce the downstream analysis.
 
-## Software versions
+## Software requirements
 
 All the tools, software, and databases used in this thesis are listed below with their corresponding versions wherever applicable.
 
@@ -69,3 +104,12 @@ All the tools, software, and databases used in this thesis are listed below with
 - ggrepel - 0.9.6
 - tibble - 3.3.0
 - purrr - 1.2.0
+
+## Analysis reproducibility
+
+
+## Main outputs
+
+
+## Contact
+
