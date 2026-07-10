@@ -43,29 +43,29 @@ Raw sequencing reads are not included in this repository due to file size and pr
 
 All the tools, software, and databases used in this thesis are listed below with their corresponding versions wherever applicable.
 
-Ubuntu/Linux - 24.04.3 LTS, kernel 6.14.0-37-generic
-micromamba - 2.6.2-1
-GNU Wget - 1.21.4
-Unix cat - 9.4
-FastQC - 0.12.1
-MultiQC - 1.32
-fastp - 0.23.4
-KneadData - 0.12.4
-Bowtie2 - 2.5.4
-SAMtools - 1.22.1
-seqtk - 1.5-r133
-hg39 Bowtie2 index - Index files dated 17 June 2021
-MEGARes - 3.00
-AMR++/ResistomeAnalyzer - Not applicable
-R - 4.5.2
-readr - 2.1.5
-dplyr - 1.1.4
-stringr - 1.6.0
-tidyr - 1.3.1
-ggplot2 - 4.0.0
-vegan - 2.7.2
-ape - 5.8.1
-pheatmap - 1.0.13
-ggrepel - 0.9.6
-tibble - 3.3.0
-purrr - 1.2.0
+- Ubuntu/Linux - 24.04.3 LTS, kernel 6.14.0-37-generic
+- micromamba - 2.6.2-1
+- GNU Wget - 1.21.4
+- Unix cat - 9.4
+- FastQC - 0.12.1
+- MultiQC - 1.32
+- fastp - 0.23.4
+- KneadData - 0.12.4
+- Bowtie2 - 2.5.4
+- SAMtools - 1.22.1
+- seqtk - 1.5-r133
+- hg39 Bowtie2 index - Index files dated 17 June 2021
+- MEGARes - 3.00
+- AMR++/ResistomeAnalyzer - Not applicable
+- R - 4.5.2
+- readr - 2.1.5
+- dplyr - 1.1.4
+- stringr - 1.6.0
+- tidyr - 1.3.1
+- ggplot2 - 4.0.0
+- vegan - 2.7.2
+- ape - 5.8.1
+- pheatmap - 1.0.13
+- ggrepel - 0.9.6
+- tibble - 3.3.0
+- purrr - 1.2.0
