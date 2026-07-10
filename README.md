@@ -21,38 +21,27 @@ The workflow combines bioinformatic preprocessing, ARG profiling, presence/absen
 
 The main workflow steps are:
 
-- Metadata parsing and matched-city selection  
-Sewage and transit metadata were parsed to identify the final matched city panel used for cross-environment comparison.
+- Metadata parsing and matched-city selection: Sewage and transit metadata were parsed to identify the final matched city panel used for cross-environment comparison.
 
-- Read quality control and trimming  
-Raw sequencing reads were quality-checked and trimmed using standard read preprocessing workflows.
+- Read quality control and trimming: Raw sequencing reads were quality-checked and trimmed using standard read preprocessing workflows.
 
-- Human-read depletion  
-Reads were screened against a human reference genome to reduce host-associated sequence content before downstream ARG profiling.
+- Human-read depletion: Reads were screened against a human reference genome to reduce host-associated sequence content before downstream ARG profiling.
 
-- City-wise read pooling  
-Reads were pooled at the city level within each environment to create a single sewage and a single transit profile per matched city.
+- City-wise read pooling: Reads were pooled at the city level within each environment to create a single sewage and a single transit profile per matched city.
 
-- Subsampling  
-City-level read pools were standardized to a fixed sequencing depth to reduce technical imbalance between samples.
+- Subsampling: City-level read pools were standardized to a fixed sequencing depth to reduce technical imbalance between samples.
 
-- ARG mapping and profiling  
-Reads were mapped against MEGARes v3.00, and ARG profiles were processed using an 80% gene-fraction criterion.
+- ARG mapping and profiling: Reads were mapped against MEGARes v3.00, and ARG profiles were processed using an 80% gene-fraction criterion.
 
-- Presence/absence matrix construction  
-ARG count tables were converted into binary presence/absence matrices. A 10% prevalence filter was applied to retain recurrent features across city-environment profiles.
+- Presence/absence matrix construction: ARG count tables were converted into binary presence/absence matrices. A 10% prevalence filter was applied to retain recurrent features across city-environment profiles.
 
-- RQ1 shared resistome analysis  
-Jaccard-based overlap, ordination, PERMANOVA, within-vs-between city similarity, and shared feature analyses were performed.
+- RQ1 shared resistome analysis: Jaccard-based overlap, ordination, PERMANOVA, within-vs-between city similarity, and shared feature analyses were performed.
 
-- RQ2 environment-specificity analysis  
-Strict environment-exclusive features and prevalence-based sewage/transit-associated features were identified and visualized.
+- RQ2 environment-specificity analysis: Strict environment-exclusive features and prevalence-based sewage/transit-associated features were identified and visualized.
 
-- RQ3 urban covariate analysis  
-City-level climatic, demographic, geographic, socioeconomic, and sanitation-related variables were compared against sewage–transit ARG overlap metrics.
+- RQ3 urban covariate analysis: City-level climatic, demographic, geographic, socioeconomic, and sanitation-related variables were compared against sewage–transit ARG overlap metrics.
 
-- Sensitivity and robustness analysis  
-Additional analyses tested the influence of sequencing depth, ARG count imbalance, richness effects, sample number, and turnover/nestedness structure.
+- Sensitivity and robustness analysis: Additional analyses tested the influence of sequencing depth, ARG count imbalance, richness effects, sample number, and turnover/nestedness structure.
 
 ## Repository structure
 
