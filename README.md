@@ -7,9 +7,9 @@ This repository contains code and processed analysis outputs for a Master's thes
 This thesis investigates urban antimicrobial resistance patterns across two contrasting but potentially connected urban environments: wastewater systems and public-transit surfaces. The analysis is structured around three research questions:
 - **RQ1. Do cities share a common urban resistome across sewage and public-transit environments?**  
 This question examines the overlap in antimicrobial resistance gene profiles between matched sewage and transit datasets across the final city panel.
-- RQ2. Which ARG features are more specific to sewage or public-transit environments?
+- **RQ2. Which ARG features are more specific to sewage or public-transit environments?**  
 This question identifies environment-specific and environment-associated ARG groups and resistance classes using prevalence-based comparisons.
-- RQ3. Are city-level characteristics associated with sewage–transit resistome overlap?
+- **RQ3. Are city-level characteristics associated with sewage–transit resistome overlap?**  
 This question explores whether climatic, demographic, geographic, socioeconomic, and sanitation-related city-level variables are associated with ARG overlap between sewage and transit environments.
 
 ## Workflow overview
@@ -18,7 +18,7 @@ The workflow combines bioinformatic preprocessing, ARG profiling, presence/absen
 
 The main workflow steps are:
 
-Metadata parsing and matched-city selection
+- Metadata parsing and matched-city selection  
 Sewage and transit metadata were parsed to identify the final matched city panel used for cross-environment comparison.
 Read quality control and trimming
 Raw sequencing reads were quality-checked and trimmed using standard read preprocessing workflows.
